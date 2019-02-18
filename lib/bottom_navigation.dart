@@ -13,17 +13,17 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   Text getTabTitle(int curIndex){
     if(curIndex==_currentIndex){
       return new Text(appBarTitle[curIndex],
-          style: new TextStyle(fontSize: 14.0,color:const Color(0xff845F3F)));
+          style: new TextStyle(fontSize: 14.0,color:const Color(0xffD43C33)));
     }else{
       return new Text(appBarTitle[curIndex],
           style: new TextStyle(fontSize: 14.0, color: const Color(0xff696969)));
     }
   }
-
+  
   // 小图标改变选中颜色
   Icon getIcon(int curIndex){
     if(curIndex==_currentIndex){
-      return Icon(appBarIcon[curIndex],color:const Color(0xff845F3F));
+      return Icon(appBarIcon[curIndex],color:const Color(0xffD43C33));
     }else{
       return Icon(appBarIcon[curIndex],color:const Color(0xff696969));
     }
