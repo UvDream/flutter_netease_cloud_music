@@ -1,25 +1,26 @@
 /*
  * @Author: wangzhongjie
- * @Date: 2019-02-18 17:08:30
+ * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-02-20 17:08:36
- * @Description: 发现
+ * @LastEditTime: 2019-02-20 17:08:20
+ * @Description: 我的
  * @Email: uvdream@163.com
  */
 import 'package:flutter/material.dart';
 import '../../components/play.dart';
-class FindPage extends StatelessWidget {
+
+class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("发现"),
+        title:Text("我的音乐"),
         elevation: 1,
         actions: <Widget>[
           PlayButton()
         ],
       ),
-      body: Text("发现"),
+      body: Text("我的"),
     );
   }
 }

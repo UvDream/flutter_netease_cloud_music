@@ -1,62 +1,106 @@
 import 'package:flutter/material.dart';
 import './pages/find/find.dart';
+import './pages/account/account.dart';
+import './pages/my/my.dart';
+import './pages/friend/friend.dart';
+import './pages/video/video.dart';
+
 class BottomNavigationWidget extends StatefulWidget {
-  _BottomNavigationWidgetState createState() => _BottomNavigationWidgetState();
+  @override
+  State<StatefulWidget> createState() => BottomNavigationWidgetState();
 }
 
-class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
-  int _currentIndex=0;
-  var appBarTitle=["发现","视频","我的"];
-  var appBarIcon=[Icons.all_inclusive,Icons.access_alarm,Icons.blur_on];
-  List<Widget> list=List();
-  // 导航栏文字选中颜色
-  Text getTabTitle(int curIndex){
-    if(curIndex==_currentIndex){
-      return new Text(appBarTitle[curIndex],
-          style: new TextStyle(fontSize: 14.0,color:const Color(0xffD43C33)));
-    }else{
-      return new Text(appBarTitle[curIndex],
-          style: new TextStyle(fontSize: 14.0, color: const Color(0xff696969)));
+class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
+  int _tabIndex = 0;
+  var tabImages;
+  var appBarTitles = ['发现', '视频', '我的','朋友','账号'];
+  /*
+   * 存放5个页面，跟fragmentList一样
+   */
+  var _pageList;
+ 
+  /*
+   * 根据选择获得对应的normal或是press的icon
+   */
+  Image getTabIcon(int curIndex) {
+    if (curIndex == _tabIndex) {
+      return tabImages[curIndex][1];
+    }
+    return tabImages[curIndex][0];
+  }
+  /*
+   * 获取bottomTab的颜色和文字
+   */
+  Text getTabTitle(int curIndex) {
+    if (curIndex == _tabIndex) {
+      return new Text(appBarTitles[curIndex],
+          style: new TextStyle(fontSize: 12.0, color: const Color(0xffD43C33)));
+    } else {
+      return new Text(appBarTitles[curIndex],
+          style: new TextStyle(fontSize: 12.0, color: const Color(0xff515151)));
     }
   }
-  
-  // 小图标改变选中颜色
-  Icon getIcon(int curIndex){
-    if(curIndex==_currentIndex){
-      return Icon(appBarIcon[curIndex],color:const Color(0xffD43C33));
-    }else{
-      return Icon(appBarIcon[curIndex],color:const Color(0xff696969));
-    }
+  /*
+   * 根据image路径获取图片
+   */
+  Image getTabImage(path) {
+    return new Image.asset(path, width: 20.0, height: 20.0);
   }
-
-  // 初始化方法
-  @override
-  void initState() {
-    list
-      ..add(FindPage())
-      ..add(FindPage())
-      ..add(FindPage());
-    super.initState();
+ 
+ 
+  void initData() {
+    /*
+     * 初始化选中和未选中的icon
+     */
+    tabImages = [
+      [getTabImage('images/bottom/find.png'), getTabImage('images/bottom/find_selected.png')],
+      [getTabImage('images/bottom/video.png'), getTabImage('images/bottom/video_selected.png')],
+      [getTabImage('images/bottom/my.png'), getTabImage('images/bottom/my_selected.png')],
+      [getTabImage('images/bottom/friend.png'), getTabImage('images/bottom/friend_selected.png')],
+      [getTabImage('images/bottom/account.png'), getTabImage('images/bottom/account_selected.png')],
+    ];
+    /*
+     * 5个子界面
+     */
+    _pageList = [
+      new FindPage(),
+      new VideoPage(),
+      new MyPage(),
+      new FriendPage(),
+      new AccountPage(),
+    ];
   }
+ 
   @override
   Widget build(BuildContext context) {
+    //初始化数据
+    initData();
     return Scaffold(
-      body: list[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          new BottomNavigationBarItem(icon: getIcon(0),title: getTabTitle(0)),
-          new BottomNavigationBarItem(icon: getIcon(1),title: getTabTitle(1)),
-          new BottomNavigationBarItem(icon: getIcon(2),title: getTabTitle(2)),
-        ],
-        fixedColor: Colors.orange,
-        // 高亮选项
-        currentIndex: _currentIndex,
-        onTap: (int index){
-          setState(() {
-            _currentIndex=index;
-          });
-        },
-      ),
-    );
+        body: _pageList[_tabIndex],
+        bottomNavigationBar: new BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            new BottomNavigationBarItem(
+                icon: getTabIcon(0), title: getTabTitle(0)),
+            new BottomNavigationBarItem(
+                icon: getTabIcon(1), title: getTabTitle(1)),
+            new BottomNavigationBarItem(
+                icon: getTabIcon(2), title: getTabTitle(2)),
+            new BottomNavigationBarItem(
+                icon: getTabIcon(3), title: getTabTitle(3)),
+             new BottomNavigationBarItem(
+                icon: getTabIcon(4), title: getTabTitle(4)),
+          ],
+          type: BottomNavigationBarType.fixed,
+          //默认选中首页
+          currentIndex: _tabIndex,
+          //点击事件
+          onTap: (index) {
+            setState(() {
+              _tabIndex = index;
+            });
+          },
+        ));
   }
+
 }
+

@@ -1,25 +1,26 @@
 /*
  * @Author: wangzhongjie
- * @Date: 2019-02-18 17:08:30
+ * @Date: 2019-02-20 15:47:45
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-02-20 17:08:36
- * @Description: 发现
+ * @LastEditTime: 2019-02-20 17:08:40
+ * @Description: 账户
  * @Email: uvdream@163.com
  */
 import 'package:flutter/material.dart';
 import '../../components/play.dart';
-class FindPage extends StatelessWidget {
+class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("发现"),
+        title:Text("账户"),
         elevation: 1,
+        centerTitle:true,
         actions: <Widget>[
           PlayButton()
         ],
       ),
-      body: Text("发现"),
+      body: Text("账户"),
     );
   }
 }
