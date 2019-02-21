@@ -16,6 +16,7 @@ class VideoPage extends StatelessWidget {
       appBar: AppBar(
         title:Text("视频"),
         elevation: 1,
+        centerTitle: true,
         actions: <Widget>[
           PlayButton()
         ],

@@ -16,6 +16,7 @@ class FriendPage extends StatelessWidget {
       appBar: AppBar(
         title:Text("朋友"),
         elevation: 1,
+        centerTitle: true,
         actions: <Widget>[
           PlayButton()
         ],

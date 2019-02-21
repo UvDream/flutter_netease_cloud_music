@@ -16,6 +16,7 @@ class MyPage extends StatelessWidget {
       appBar: AppBar(
         title:Text("我的音乐"),
         elevation: 1,
+        centerTitle: true,
         actions: <Widget>[
           PlayButton()
         ],

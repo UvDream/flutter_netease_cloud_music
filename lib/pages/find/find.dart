@@ -15,6 +15,7 @@ class FindPage extends StatelessWidget {
       appBar: AppBar(
         title:Text("发现"),
         elevation: 1,
+        centerTitle: true,
         actions: <Widget>[
           PlayButton()
         ],
