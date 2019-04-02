@@ -20,7 +20,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   var _pageList;
  
   /*
-   * 根据选择获得对应的normal或是press的icon
+   * 根据选择获得对应的normal或是press的img
    */
   Image getTabIcon(int curIndex) {
     if (curIndex == _tabIndex) {
