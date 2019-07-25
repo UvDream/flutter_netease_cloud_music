@@ -35,10 +35,10 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   Text getTabTitle(int curIndex) {
     if (curIndex == _tabIndex) {
       return new Text(appBarTitles[curIndex],
-          style: new TextStyle(fontSize: 10.0, color: const Color(0xffD43C33)));
+          style: new TextStyle(fontSize: 9.0, color: const Color(0xffD43C33)));
     } else {
       return new Text(appBarTitles[curIndex],
-          style: new TextStyle(fontSize: 10.0, color: const Color(0xff515151)));
+          style: new TextStyle(fontSize: 9.0, color: const Color(0xff515151)));
     }
   }
 

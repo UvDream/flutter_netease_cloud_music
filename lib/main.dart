@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Color(0xffD43C33),
+        primaryColor: Colors.white,
       ),
       home:BottomNavigationWidget(),
     );
