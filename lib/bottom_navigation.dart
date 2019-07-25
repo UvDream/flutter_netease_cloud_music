@@ -94,6 +94,7 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     return Scaffold(
         body: _pageList[_tabIndex],
         bottomNavigationBar: new BottomNavigationBar(
+          backgroundColor: Colors.white,
           items: <BottomNavigationBarItem>[
             new BottomNavigationBarItem(
                 icon: getTabIcon(0), title: getTabTitle(0)),
