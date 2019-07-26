@@ -69,7 +69,7 @@ flutter:
   fonts:
     - family: IconFont
       fonts:
-        - asset: assets/fonts/IconFont.ttf
+        - asset: assets/fonts/iconfont.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
