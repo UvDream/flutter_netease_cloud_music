@@ -26,6 +26,7 @@ class _SwiperPageState extends State<SwiperPage> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Container(
+            margin: EdgeInsets.only(top: 15),
             width: ScreenUtil().setWidth(688),
             height: ScreenUtil().setHeight(265),
             // decoration: BoxDecoration(
