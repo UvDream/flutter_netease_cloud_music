@@ -26,25 +26,15 @@ class _SwiperPageState extends State<SwiperPage> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Container(
-            width: ScreenUtil().setWidth(700),
-            height: ScreenUtil().setHeight(350),
+            width: ScreenUtil().setWidth(688),
+            height: ScreenUtil().setHeight(265),
             // decoration: BoxDecoration(
             //   border: Border.all(width: 2, color: Colors.red),
             //   borderRadius: BorderRadius.circular(ScreenUtil().setHeight(95)),
             // ),
             child: Swiper(
               itemWidth: 100,
-              pagination: SwiperCustomPagination(
-                  builder: (BuildContext context, SwiperPluginConfig config) {
-                print('轮播图');
-                print(config.itemCount);
-                return Container(
-                  color: Colors.red,
-                  child: Container(
-                    child: Text('data'),
-                  ),
-                );
-              }),
+              pagination:SwiperPagination(),
               autoplay: true,
               itemCount: SwiperList.length,
               itemBuilder: (BuildContext context, int index) {
