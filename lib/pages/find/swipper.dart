@@ -34,7 +34,17 @@ class _SwiperPageState extends State<SwiperPage> {
             // ),
             child: Swiper(
               itemWidth: 100,
-              pagination: SwiperPagination(),
+              pagination: SwiperCustomPagination(
+                  builder: (BuildContext context, SwiperPluginConfig config) {
+                print('轮播图');
+                print(config.itemCount);
+                return Container(
+                  color: Colors.red,
+                  child: Container(
+                    child: Text('data'),
+                  ),
+                );
+              }),
               autoplay: true,
               itemCount: SwiperList.length,
               itemBuilder: (BuildContext context, int index) {
