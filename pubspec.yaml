@@ -31,13 +31,11 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -45,18 +43,17 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - images/bottom/find.png
-   - images/bottom/find_selected.png
-   - images/bottom/video.png
-   - images/bottom/video_selected.png
-   - images/bottom/my.png
-   - images/bottom/my_selected.png
-   - images/bottom/friend.png
-   - images/bottom/friend_selected.png
-   - images/bottom/account.png
-   - images/bottom/account_selected.png
-   - images/icons/music.png
-
+    - images/bottom/find.png
+    - images/bottom/find_selected.png
+    - images/bottom/video.png
+    - images/bottom/video_selected.png
+    - images/bottom/my.png
+    - images/bottom/my_selected.png
+    - images/bottom/friend.png
+    - images/bottom/friend_selected.png
+    - images/bottom/account.png
+    - images/bottom/account_selected.png
+    - images/icons/music.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -69,7 +66,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: IconFont
+      fonts:
+        - asset: assets/fonts/IconFont.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
