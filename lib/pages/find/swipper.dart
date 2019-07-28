@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../config/http.dart';
 import '../../config/service_url.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'dart:convert';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SwiperPage extends StatefulWidget {
