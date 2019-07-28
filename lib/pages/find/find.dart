@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import './search.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './swipper.dart';
+import './top_navigation.dart';
 
 class FindPage extends StatelessWidget {
   @override
@@ -49,7 +50,7 @@ class FindPage extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Column(
-                children: <Widget>[SwiperPage()],
+                children: <Widget>[SwiperPage(),TopNavigation()],
               ),
             )
           ],
