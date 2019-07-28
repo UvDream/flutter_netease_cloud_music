@@ -14,14 +14,12 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   int _tabIndex = 0;
   var tabImages;
   var appBarTitles = ['发现', '视频', '我的', '朋友', '账号'];
-  /*
-   * 存放5个页面，跟fragmentList一样
-   */
+  //存放5个页面，跟fragmentList一样
+
   var _pageList;
 
-  /*
-   * 根据选择获得对应的normal或是press的img
-   */
+  //根据选择获得对应的normal或是press的img
+
   Image getTabIcon(int curIndex) {
     if (curIndex == _tabIndex) {
       return tabImages[curIndex][1];
@@ -29,9 +27,8 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     return tabImages[curIndex][0];
   }
 
-  /*
-   * 获取bottomTab的颜色和文字
-   */
+  //获取bottomTab的颜色和文字
+
   Text getTabTitle(int curIndex) {
     if (curIndex == _tabIndex) {
       return new Text(appBarTitles[curIndex],
@@ -42,9 +39,8 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     }
   }
 
-  /*
-   * 根据image路径获取图片
-   */
+  // 根据image路径获取图片
+
   Image getTabImage(path) {
     return new Image.asset(path, width: 30.0, height: 30.0);
   }
