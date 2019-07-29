@@ -4,4 +4,4 @@
 
 > ## 发现页面
 
-![img](/docs/images/Find.png)
+![img](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.png)
