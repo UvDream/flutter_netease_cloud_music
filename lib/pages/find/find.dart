@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-26 16:16:29
+ * @LastEditTime: 2019-07-29 11:50:55
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -11,6 +11,7 @@ import './search.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './swipper.dart';
 import './top_navigation.dart';
+import './recommend_song_list.dart';
 
 class FindPage extends StatelessWidget {
   @override
@@ -49,8 +50,13 @@ class FindPage extends StatelessWidget {
         body: ListView(
           children: <Widget>[
             Container(
+              color: Colors.white,
               child: Column(
-                children: <Widget>[SwiperPage(),TopNavigation()],
+                children: <Widget>[
+                  SwiperPage(),
+                  TopNavigation(),
+                  RecommendSongList()
+                ],
               ),
             )
           ],
