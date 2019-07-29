@@ -4,4 +4,4 @@
 
 > ## 发现页面
 
-![img](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.png)
+![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.PNG?raw=true "首页")
