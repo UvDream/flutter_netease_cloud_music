@@ -10,7 +10,7 @@ class TopNavigation extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: <Widget>[
-          _containPage(0xe609, '每日推荐', 25),
+          _containPage(0xe624, '每日推荐', 24),
           _containPage(0xe64b, '歌单', 20),
           _containPage(0xe608, '排行榜', 20),
           _containPage(0xe66b, '电台', 24),
@@ -44,6 +44,7 @@ class TopNavigation extends StatelessWidget {
                       margin: EdgeInsets.only(top: 22, bottom: 8),
                       width: ScreenUtil().setWidth(90),
                       height: ScreenUtil().setWidth(90),
+                      alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.red,
                           borderRadius: BorderRadius.circular(45)),
@@ -64,7 +65,7 @@ class TopNavigation extends StatelessWidget {
                   child: title == '每日推荐'
                       ? Text(
                           '$_date',
-                          style: TextStyle(color: Colors.white, fontSize: 10),
+                          style: TextStyle(color: Colors.red, fontSize: 10),
                         )
                       : Text(''),
                 )
