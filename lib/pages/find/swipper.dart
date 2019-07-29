@@ -43,7 +43,7 @@ class _SwiperPageState extends State<SwiperPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: FadeInImage.assetNetwork(
-                        placeholder: 'images/bottom/find.png',
+                        placeholder: 'images/icon/music.png',
                         image: '${SwiperList[index]['imageUrl']}',
                         fit: BoxFit.fill,
                       ),
