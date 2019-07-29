@@ -34,7 +34,7 @@ class _SwiperPageState extends State<SwiperPage> {
             // ),
             child: Swiper(
               itemWidth: 100,
-              pagination:SwiperPagination(),
+              pagination: SwiperPagination(),
               autoplay: true,
               itemCount: SwiperList.length,
               itemBuilder: (BuildContext context, int index) {
@@ -43,7 +43,7 @@ class _SwiperPageState extends State<SwiperPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: FadeInImage.assetNetwork(
-                        placeholder: 'images/jicheng.png',
+                        placeholder: 'images/plac.png',
                         image: '${SwiperList[index]['imageUrl']}',
                         fit: BoxFit.fill,
                       ),
