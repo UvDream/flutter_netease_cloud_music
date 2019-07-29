@@ -2,7 +2,7 @@ class RecommendSongListModel {
   bool hasTaste;
   int code;
   int category;
-  List<Result> result;
+  List<RecommendSongList> result;
 
   RecommendSongListModel(
       {this.hasTaste, this.code, this.category, this.result});
@@ -12,9 +12,9 @@ class RecommendSongListModel {
     code = json['code'];
     category = json['category'];
     if (json['result'] != null) {
-      result = new List<Result>();
+      result = new List<RecommendSongList>();
       json['result'].forEach((v) {
-        result.add(new Result.fromJson(v));
+        result.add(new RecommendSongList.fromJson(v));
       });
     }
   }
@@ -31,7 +31,7 @@ class RecommendSongListModel {
   }
 }
 
-class Result {
+class RecommendSongList {
   int id;
   int type;
   String name;
@@ -43,7 +43,7 @@ class Result {
   bool highQuality;
   String alg;
 
-  Result(
+  RecommendSongList(
       {this.id,
       this.type,
       this.name,
@@ -55,7 +55,7 @@ class Result {
       this.highQuality,
       this.alg});
 
-  Result.fromJson(Map<String, dynamic> json) {
+  RecommendSongList.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     type = json['type'];
     name = json['name'];
