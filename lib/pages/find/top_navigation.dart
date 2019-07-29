@@ -10,45 +10,65 @@ class TopNavigation extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: <Widget>[
-          _containPage(0xe609, '每日推荐'),
-          _containPage(0xe609, '歌单'),
-          _containPage(0xe608, '排行榜'),
-          _containPage(0xe609, '电台'),
-          _containPage(0xe609, '直播')
+          _containPage(0xe609, '每日推荐', 25),
+          _containPage(0xe64b, '歌单', 20),
+          _containPage(0xe608, '排行榜', 20),
+          _containPage(0xe66b, '电台', 24),
+          _containPage(0xe605, '直播', 24)
         ],
       ),
     );
   }
 
-  Widget _containPage(int icon, title) {
+  Widget _containPage(int icon, String title, double IconSize) {
+    int _date = new DateTime.now().day;
     return Container(
         decoration: BoxDecoration(
             border:
                 Border(bottom: BorderSide(width: 1, color: Colors.black12))),
         width: ScreenUtil().setWidth(150),
         child: InkWell(
-          onTap: () {
-            print('点击了');
-          },
-          child: Column(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(top: 22, bottom: 8),
-                width: ScreenUtil().setWidth(90),
-                height: ScreenUtil().setWidth(90),
-                decoration: BoxDecoration(
-                    color: Colors.red, borderRadius: BorderRadius.circular(45)),
-                child: Icon(
-                  IconData(icon, fontFamily: 'IconFont'),
-                  size: 20,
-                  color: Colors.white,
+            onTap: () {
+              print('点击了');
+              var now = new DateTime.now();
+              var date = new DateTime(now.day);
+              print(date);
+              print(now.day);
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(top: 22, bottom: 8),
+                      width: ScreenUtil().setWidth(90),
+                      height: ScreenUtil().setWidth(90),
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(45)),
+                      child: Icon(
+                        IconData(icon, fontFamily: 'IconFont'),
+                        size: IconSize,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(title,
+                        style: TextStyle(
+                            fontSize: ScreenUtil().setSp(20),
+                            color: Colors.black54))
+                  ],
                 ),
-              ),
-              Text(title,
-                  style: TextStyle(
-                      fontSize: ScreenUtil().setSp(20), color: Colors.black54))
-            ],
-          ),
-        ));
+                Positioned(
+                  top: 42.5,
+                  child: title == '每日推荐'
+                      ? Text(
+                          '$_date',
+                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        )
+                      : Text(''),
+                )
+              ],
+            )));
   }
 }
