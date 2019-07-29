@@ -4,4 +4,4 @@
 
 > ## 发现页面
 
-![img](./docs/images/Find.png)
+![img](/docs/images/Find.png)
