@@ -1,3 +1,11 @@
+/*
+ * @Author: wangzhongjie
+ * @Date: 2019-07-29 08:28:16
+ * @LastEditors: wangzhongjie
+ * @LastEditTime: 2019-07-29 10:53:36
+ * @Description: 首页顶部导航栏
+ * @Email: uvdream@163.com
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
