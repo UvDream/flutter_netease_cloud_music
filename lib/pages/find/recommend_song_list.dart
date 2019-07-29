@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-29 15:48:07
+ * @LastEditTime: 2019-07-29 16:55:25
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -11,6 +11,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/http.dart';
 import '../../config/service_url.dart';
+import '../../utils/number.dart';
 
 class RecommendSongList extends StatefulWidget {
   // RecommendSongList({Key key}) : super(key: key);
@@ -104,7 +105,7 @@ class _RecommendSongListState extends State<RecommendSongList> {
           Image.network(val['picUrl']),
           Positioned(
             right: 4,
-            top: 4,
+            top: 2,
             child: Row(
               children: <Widget>[
                 Icon(
@@ -113,7 +114,7 @@ class _RecommendSongListState extends State<RecommendSongList> {
                   size: 15,
                 ),
                 Text(
-                  '${val['playCount']}',
+                  '${getFormattedNumber(val['playCount'])}',
                   style: TextStyle(color: Colors.white),
                 )
               ],
