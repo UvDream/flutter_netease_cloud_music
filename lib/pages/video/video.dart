@@ -2,14 +2,12 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-29 20:08:49
+ * @LastEditTime: 2019-07-30 10:14:58
  * @Description: 我的
  * @Email: uvdream@163.com
  */
 import 'package:flutter/material.dart';
 import '../../components/play.dart';
-import 'package:provider/provider.dart';
-import '../../provider/count.dart';
 
 class VideoPage extends StatelessWidget {
   @override
@@ -22,7 +20,7 @@ class VideoPage extends StatelessWidget {
           actions: <Widget>[PlayButton()],
         ),
         body: Container(
-          child: Text(Provider.of<DataInfo>(context).count.toString()),
+          child: Text('视频'),
         ));
   }
 }

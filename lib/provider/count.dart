@@ -1,30 +1,28 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'dart:async';
 
-class DataInfo with ChangeNotifier {
-  int _count = 0;
-  ThemeData _themeData = ThemeData.light();
+class CounterBloc {
+  StreamController<int> _streamController;
+  Stream<int> _stream;
+  int _count;
 
-  get count => _count;
-  get themeData => _themeData;
-
-  addCount() {
-    _count++;
-    notifyListeners();
+  CounterBloc() {
+    _count = 0;
+    _streamController = StreamController.broadcast();
+    _stream = _streamController.stream;
   }
 
-  subCount() {
-    _count--;
-    notifyListeners();
+  Stream<int> get stream => _stream;
+  int get count => _count;
+
+  addCounter() {
+    _streamController.sink.add(++_count);
   }
 
-  changeTheme() {
-    if (_themeData == ThemeData.light()) {
-      _themeData = ThemeData.dark();
-    } else {
-      _themeData = ThemeData.light();
-    }
-    notifyListeners();
+  subCounter() {
+    _streamController.sink.add(--_count);
+  }
+
+  dispose() {
+    _streamController.close();
   }
 }

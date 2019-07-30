@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-29 19:38:38
+ * @LastEditTime: 2019-07-30 11:11:59
  * @Description: 我的
  * @Email: uvdream@163.com
  */
@@ -22,22 +22,29 @@ class MyPage extends StatelessWidget {
         actions: <Widget>[PlayButton()],
       ),
       body: Center(
-        child: Column(
-          children: <Widget>[
-            Text(Provider.of<DataInfo>(context).count.toString()),
-            RaisedButton(
-              child: Text("+"),
-              onPressed: () {
-                Provider.of<DataInfo>(context).addCount();
-              },
-            ),
-            RaisedButton(
-              child: Text("-"),
-              onPressed: () {
-                Provider.of<DataInfo>(context).subCount();
-              },
-            )
-          ],
+        child: StreamBuilder(
+          initialData: Provider.of<CounterBloc>(context).count,
+          stream: Provider.of<CounterBloc>(context).stream,
+          builder: (context, snapshot) {
+            return Column(
+              children: <Widget>[
+                Text(Provider.of<CounterBloc>(context).count.toString()),
+                RaisedButton(
+                  child: Text("+"),
+                  onPressed: () {
+                    Provider.of<CounterBloc>(context).addCounter();
+                  },
+                ),
+                RaisedButton(
+                  child: Text("-"),
+                  onPressed: () {
+                    Provider.of<CounterBloc>(context).subCounter();
+                  },
+                ),
+                //
+              ],
+            );
+          },
         ),
       ),
     );

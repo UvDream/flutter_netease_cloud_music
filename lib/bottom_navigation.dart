@@ -4,6 +4,8 @@ import './pages/account/account.dart';
 import './pages/my/my.dart';
 import './pages/friend/friend.dart';
 import './pages/video/video.dart';
+import 'package:provider/provider.dart';
+import './provider/count.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -75,11 +77,11 @@ class BottomNavigationWidgetState extends State<BottomNavigationWidget> {
      * 5个子界面
      */
     _pageList = [
-      new FindPage(),
-      new VideoPage(),
-      new MyPage(),
-      new FriendPage(),
-      new AccountPage(),
+      FindPage(),
+      VideoPage(),
+      MyPage(),
+      FriendPage(),
+      AccountPage(),
     ];
   }
 

@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'bottom_navigation.dart';
 import 'package:provider/provider.dart';
 import './provider/count.dart';
-
 // void main() => runApp(MyApp());
 
-void main() => runApp(
-    ChangeNotifierProvider(builder: (context) => DataInfo(), child: MyApp()));
+// void main() => runApp(ChangeNotifierProvider(
+//     builder: (context) => CounterBloc(), child: MyApp()));
 
-// void main() {
-//   var counter = DataInfo();
-//   runApp(MultiProvider(
-//     providers: [Provider<DataInfo>.value(value: counter)],
-//     child: MyApp(),
-//   ));
-// }
+void main() {
+  Provider.debugCheckInvalidValueType = null;
+  var counter = CounterBloc();
+  runApp(MultiProvider(
+    providers: [Provider<CounterBloc>.value(value: counter)],
+    child: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
