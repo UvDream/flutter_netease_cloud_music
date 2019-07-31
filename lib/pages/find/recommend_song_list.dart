@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-29 16:55:25
+ * @LastEditTime: 2019-07-31 17:05:23
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -58,10 +58,10 @@ class _RecommendSongListState extends State<RecommendSongList> {
               width: ScreenUtil().setWidth(154),
               child: Container(
                 width: ScreenUtil().setWidth(154),
-                height: ScreenUtil().setHeight(70),
+                height: ScreenUtil().setHeight(60),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(74),
+                    borderRadius: BorderRadius.circular(75),
                     border: Border.all(width: 1, color: Colors.black12)),
                 child: Text(
                   '歌单广场',
