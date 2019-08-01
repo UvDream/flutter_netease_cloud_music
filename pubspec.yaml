@@ -54,6 +54,8 @@ flutter:
     - images/bottom/account.png
     - images/bottom/account_selected.png
     - images/icons/music.png
+    - images/placeholder.png
+    - images/place_block.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
