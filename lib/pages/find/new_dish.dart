@@ -15,12 +15,20 @@ class NewDishPage extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _title(context),
-          Text(Provider.of<NewDishProvider>(context).isLeft.toString()),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _contentArea(context),
+              _contentArea(context),
+              _contentArea(context),
+            ],
+          )
         ],
       ),
     ));
   }
 
+// 标题
   Widget _title(context) {
     return Container(
         height: ScreenUtil().setHeight(80),
@@ -47,6 +55,7 @@ class NewDishPage extends StatelessWidget {
         ));
   }
 
+// 标题切换新歌/新碟
   Widget _titleText(context) {
     return Row(
       children: <Widget>[
@@ -61,7 +70,7 @@ class NewDishPage extends StatelessWidget {
             child: Text(
               '新碟',
               style: TextStyle(
-                  fontSize: ScreenUtil().setSp(26),
+                  fontSize: ScreenUtil().setSp(32),
                   color: Provider.of<NewDishProvider>(context).isLeft
                       ? Colors.black
                       : Colors.black26),
@@ -82,7 +91,7 @@ class NewDishPage extends StatelessWidget {
             child: Text(
               '新歌',
               style: TextStyle(
-                  fontSize: ScreenUtil().setSp(26),
+                  fontSize: ScreenUtil().setSp(32),
                   color: Provider.of<NewDishProvider>(context).isLeft
                       ? Colors.black26
                       : Colors.black),
@@ -90,6 +99,76 @@ class NewDishPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+// 内容
+  Widget _contentArea(conetxt) {
+    return Container(
+      width: ScreenUtil().setWidth(215),
+      height: ScreenUtil().setWidth(290),
+      margin: EdgeInsets.fromLTRB(
+          ScreenUtil().setWidth(6),
+          ScreenUtil().setWidth(16),
+          ScreenUtil().setWidth(6),
+          ScreenUtil().setWidth(30)),
+      child: InkWell(
+        onTap: () {},
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              width: ScreenUtil().setWidth(215),
+              height: ScreenUtil().setWidth(215),
+              child: Stack(
+                children: <Widget>[
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: FadeInImage.assetNetwork(
+                      placeholder: 'images/place_block.png',
+                      image:
+                          'https://tempim-1256796114.cos-website.ap-shanghai.myqcloud.com/placeholder/260x260/ccc',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 4,
+                    right: 4,
+                    child: Container(
+                      width: ScreenUtil().setWidth(62),
+                      height: ScreenUtil().setWidth(62),
+                      padding: EdgeInsets.only(left: 3),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(255, 255, 255, .5),
+                        borderRadius: BorderRadius.circular(62),
+                      ),
+                      child: Icon(
+                        IconData(0xe613, fontFamily: 'IconFont'),
+                        color: Color(0xffeb4d44),
+                        size: 18,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Text(
+              'data今日好声22211',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: ScreenUtil().setSp(24)),
+            ),
+            Text(
+              'data今日好声音必须好',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                  fontSize: ScreenUtil().setSp(26), color: Colors.black45),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
