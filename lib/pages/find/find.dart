@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 14:52:00
+ * @LastEditTime: 2019-08-01 15:40:29
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -54,9 +54,9 @@ class FindPage extends StatelessWidget {
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                // SwiperPage(),
-                // TopNavigation(),
-                // RecommendSongList(),
+                SwiperPage(),
+                TopNavigation(),
+                RecommendSongList(),
                 NewDishPage()
               ],
             ),

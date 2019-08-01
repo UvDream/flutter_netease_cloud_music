@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-29 15:44:45
+ * @LastEditTime: 2019-08-01 19:19:40
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
@@ -14,7 +14,7 @@ class TopNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenUtil().setWidth(750),
-      height: ScreenUtil().setHeight(200),
+      height: ScreenUtil().setHeight(180),
       color: Colors.white,
       child: Row(
         children: <Widget>[
@@ -62,10 +62,12 @@ class TopNavigation extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    Text(title,
-                        style: TextStyle(
-                            fontSize: ScreenUtil().setSp(20),
-                            color: Colors.black54))
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(24),
+                      ),
+                    )
                   ],
                 ),
                 Positioned(

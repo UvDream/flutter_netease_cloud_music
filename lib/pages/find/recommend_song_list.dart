@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 10:09:14
+ * @LastEditTime: 2019-08-01 19:21:52
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -105,7 +105,15 @@ class _RecommendSongListState extends State<RecommendSongList> {
     return Container(
       child: Stack(
         children: <Widget>[
-          Image.network(val['picUrl']),
+          // Image.network(val['picUrl']),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: FadeInImage.assetNetwork(
+              placeholder: 'images/place_block.png',
+              image: val['picUrl'],
+              fit: BoxFit.fill,
+            ),
+          ),
           Positioned(
             right: 4,
             top: 2,

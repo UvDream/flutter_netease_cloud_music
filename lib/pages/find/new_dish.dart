@@ -124,7 +124,7 @@ class NewDishPage extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(4),
                     child: FadeInImage.assetNetwork(
                       placeholder: 'images/place_block.png',
                       image:
