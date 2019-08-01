@@ -18,9 +18,9 @@ class NewDishPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              _contentArea(context),
-              _contentArea(context),
-              _contentArea(context),
+              _newSong(context),
+              _newSong(context),
+              _newSong(context),
             ],
           )
         ],
@@ -103,7 +103,7 @@ class NewDishPage extends StatelessWidget {
   }
 
 // 内容
-  Widget _contentArea(conetxt) {
+  Widget _newSong(context) {
     return Container(
       width: ScreenUtil().setWidth(215),
       height: ScreenUtil().setWidth(290),
@@ -132,24 +132,7 @@ class NewDishPage extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
                   ),
-                  Positioned(
-                    bottom: 4,
-                    right: 4,
-                    child: Container(
-                      width: ScreenUtil().setWidth(62),
-                      height: ScreenUtil().setWidth(62),
-                      padding: EdgeInsets.only(left: 3),
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(255, 255, 255, .5),
-                        borderRadius: BorderRadius.circular(62),
-                      ),
-                      child: Icon(
-                        IconData(0xe613, fontFamily: 'IconFont'),
-                        color: Color(0xffeb4d44),
-                        size: 18,
-                      ),
-                    ),
-                  )
+                  _empty(context),
                 ],
               ),
             ),
@@ -170,6 +153,31 @@ class NewDishPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _empty(context) {
+    if (!Provider.of<NewDishProvider>(context).isLeft) {
+      return Positioned(
+        bottom: 4,
+        right: 4,
+        child: Container(
+          width: ScreenUtil().setWidth(62),
+          height: ScreenUtil().setWidth(62),
+          padding: EdgeInsets.only(left: 3),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(255, 255, 255, .5),
+            borderRadius: BorderRadius.circular(62),
+          ),
+          child: Icon(
+            IconData(0xe613, fontFamily: 'IconFont'),
+            color: Color(0xffeb4d44),
+            size: 18,
+          ),
+        ),
+      );
+    } else {
+      return Text('');
+    }
   }
 
   void getNewDish() async {
