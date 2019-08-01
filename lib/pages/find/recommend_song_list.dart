@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-07-31 17:05:23
+ * @LastEditTime: 2019-08-01 10:09:14
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -14,7 +14,6 @@ import '../../config/service_url.dart';
 import '../../utils/number.dart';
 
 class RecommendSongList extends StatefulWidget {
-  // RecommendSongList({Key key}) : super(key: key);
   @override
   _RecommendSongListState createState() => _RecommendSongListState();
 }
@@ -95,6 +94,10 @@ class _RecommendSongListState extends State<RecommendSongList> {
         spacing: 3,
         children: listWidget,
       );
+    } else {
+      return Center(
+        child: Text('加载中'),
+      );
     }
   }
 
@@ -125,13 +128,13 @@ class _RecommendSongListState extends State<RecommendSongList> {
     );
   }
 
-  void _getSongList() {
-    fetch(servicePath['songListApi']).then((val) {
-      print('111$val');
-      print('------------------推荐歌单------------------------');
+  void _getSongList() async {
+    await fetch(servicePath['songListApi']).then((val) {
+      // print('111$val');
+      // print('------------------推荐歌单------------------------');
       List<Map> data = (val['result'] as List).cast();
       data.removeRange(6, data.length);
-      print(data);
+      // print(data);
       setState(() {
         SongListData = data;
       });
