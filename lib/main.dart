@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'bottom_navigation.dart';
 import 'package:provider/provider.dart';
 import './provider/count.dart';
+import './provider/find/new_dish.dart';
 // void main() => runApp(MyApp());
 
 // void main() => runApp(ChangeNotifierProvider(
@@ -9,23 +10,40 @@ import './provider/count.dart';
 
 void main() {
   Provider.debugCheckInvalidValueType = null;
-  var counter = CounterBloc();
-  runApp(MultiProvider(
-    providers: [Provider<CounterBloc>.value(value: counter)],
-    child: MyApp(),
-  ));
+  // var counter = CounterBloc();
+  // var newDish = NewDishProvider();
+  // runApp(MultiProvider(
+  //   providers: [
+  //     Provider<CounterBloc>.value(value: counter),
+  //     Provider<NewDishProvider>.value(value: newDish),
+  //     // ChangeNotifierProvider(builder: (_) => NewDishProvider()),
+  //   ],
+  //   child: MyApp(),
+  // ));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '网易云音乐(仿)',
-      theme: ThemeData(
-        primaryColor: Colors.white,
+    var counter = CounterBloc();
+    var newDish = NewDishProvider();
+    return MultiProvider(
+      providers: [
+        Provider<CounterBloc>.value(value: counter),
+        // 制管理恒定数据不通知视图刷新
+        // Provider<NewDishProvider>.value(value: newDish),
+
+        ChangeNotifierProvider(builder: (_) => NewDishProvider()),
+      ],
+      child: MaterialApp(
+        title: '网易云音乐(仿)',
+        theme: ThemeData(
+          primaryColor: Colors.white,
+        ),
+        home: BottomNavigationWidget(),
       ),
-      home: BottomNavigationWidget(),
     );
   }
 }
