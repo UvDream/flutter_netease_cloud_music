@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 14:54:58
+ * @LastEditTime: 2019-08-02 15:34:10
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -15,7 +15,15 @@ import './recommend_song_list.dart';
 import './new_dish.dart';
 import '../../components/play.dart';
 
-class FindPage extends StatelessWidget {
+class FindPage extends StatefulWidget {
+  @override
+  _FindPageState createState() => _FindPageState();
+}
+
+class _FindPageState extends State<FindPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
