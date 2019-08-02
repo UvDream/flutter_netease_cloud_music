@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 10:31:23
+ * @LastEditTime: 2019-08-02 15:02:23
  * @Description: 我的
  * @Email: uvdream@163.com
  */
@@ -16,6 +16,13 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+          onTap: () {},
+          child: Icon(
+            IconData(0xe67c, fontFamily: 'IconFont'),
+            size: 32,
+          ),
+        ),
         title: Text("我的音乐"),
         elevation: 1,
         centerTitle: true,

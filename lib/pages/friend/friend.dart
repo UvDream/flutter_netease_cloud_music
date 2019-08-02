@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:53
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-02-20 17:08:28
+ * @LastEditTime: 2019-08-02 15:02:41
  * @Description: 账户
  * @Email: uvdream@163.com
  */
@@ -14,12 +14,17 @@ class FriendPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("朋友"),
+        leading: InkWell(
+          onTap: () {},
+          child: Icon(
+            IconData(0xe60d, fontFamily: 'IconFont'),
+            size: 32,
+          ),
+        ),
+        title: Text("朋友"),
         elevation: 1,
         centerTitle: true,
-        actions: <Widget>[
-          PlayButton()
-        ],
+        actions: <Widget>[PlayButton()],
       ),
       body: Text("朋友"),
     );

@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 15:40:29
+ * @LastEditTime: 2019-08-02 14:54:58
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -13,6 +13,7 @@ import './swipper.dart';
 import './top_navigation.dart';
 import './recommend_song_list.dart';
 import './new_dish.dart';
+import '../../components/play.dart';
 
 class FindPage extends StatelessWidget {
   @override
@@ -27,26 +28,14 @@ class FindPage extends StatelessWidget {
             // color: Colors.green,
             child: Icon(
               IconData(0xe64f, fontFamily: 'IconFont'),
-              size: 20,
+              size: 25,
             ),
           ),
         ),
         title: SearchArea(),
         elevation: 0,
         centerTitle: true,
-        actions: <Widget>[
-          InkWell(
-            onTap: () {},
-            child: Container(
-              // color: Colors.orange,
-              width: 54,
-              child: Icon(
-                IconData(0xe649, fontFamily: 'IconFont'),
-                size: 20,
-              ),
-            ),
-          )
-        ],
+        actions: <Widget>[PlayButton()],
       ),
       body: ListView(
         children: <Widget>[
