@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 15:02:23
+ * @LastEditTime: 2019-08-02 15:12:26
  * @Description: 我的
  * @Email: uvdream@163.com
  */
@@ -23,7 +23,10 @@ class MyPage extends StatelessWidget {
             size: 32,
           ),
         ),
-        title: Text("我的音乐"),
+        title: Text(
+          "我的音乐",
+          style: TextStyle(fontSize: 18),
+        ),
         elevation: 1,
         centerTitle: true,
         actions: <Widget>[PlayButton()],

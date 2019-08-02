@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 19:19:40
+ * @LastEditTime: 2019-08-02 15:03:44
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
@@ -14,7 +14,7 @@ class TopNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenUtil().setWidth(750),
-      height: ScreenUtil().setHeight(180),
+      height: ScreenUtil().setHeight(200),
       color: Colors.white,
       child: Row(
         children: <Widget>[
