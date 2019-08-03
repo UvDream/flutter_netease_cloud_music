@@ -5,7 +5,7 @@ import './provider/count.dart';
 import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
 // void main() => runApp(MyApp());
-
+import './splash_screen.dart';
 // void main() => runApp(ChangeNotifierProvider(
 //     builder: (context) => CounterBloc(), child: MyApp()));
 
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
         ),
-        home: BottomNavigationWidget(),
+        home: SplashScreen(),
       ),
     );
   }
