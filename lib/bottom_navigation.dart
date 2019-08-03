@@ -8,6 +8,7 @@ import './pages/video/video.dart';
 import 'package:provider/provider.dart';
 import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavigationWidget extends StatelessWidget {
   final List<Widget> _pageList = [
@@ -22,23 +23,81 @@ class BottomNavigationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var currentIndex = Provider.of<CurrentIndexProvider>(context).currentIndex;
     return Scaffold(
-      body: _pageList[currentIndex],
+      body: IndexedStack(
+        index: currentIndex,
+        children: _pageList,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           Provider.of<CurrentIndexProvider>(context).changeIndex(index);
         },
+        type: BottomNavigationBarType.fixed,
+        currentIndex: currentIndex,
+        backgroundColor: Colors.white,
+        elevation: 0,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: currentIndex == 0
-                ? Image.asset('images/bottom/find_selected.png')
-                : Image.asset('images/bottom/find.png'),
-            title: Text('发现'),
+            icon: Container(
+              width: ScreenUtil().setWidth(60),
+              child: currentIndex == 0
+                  ? Image.asset('images/bottom/find_selected.png')
+                  : Image.asset('images/bottom/find.png'),
+            ),
+            title: Text(
+              '发现',
+              style: TextStyle(
+                color: currentIndex == 0 ? Colors.red : Colors.black,
+                fontSize: ScreenUtil().setSp(20),
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: currentIndex == 1
-                ? Image.asset('images/bottom/video_selected.png')
-                : Image.asset('images/bottom/video.png'),
-            title: Text('视频'),
+            icon: Container(
+              width: ScreenUtil().setWidth(60),
+              child: currentIndex == 1
+                  ? Image.asset('images/bottom/video_selected.png')
+                  : Image.asset('images/bottom/video.png'),
+            ),
+            title: Text('视频', style: TextStyle(
+                color: currentIndex == 1 ? Colors.red : Colors.black,
+                fontSize: ScreenUtil().setSp(20),
+              ),),
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              width: ScreenUtil().setWidth(60),
+              child: currentIndex == 2
+                  ? Image.asset('images/bottom/my_selected.png')
+                  : Image.asset('images/bottom/my.png'),
+            ),
+            title: Text('我的', style: TextStyle(
+                color: currentIndex == 2 ? Colors.red : Colors.black,
+                fontSize: ScreenUtil().setSp(20),
+              ),),
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              width: ScreenUtil().setWidth(60),
+              child: currentIndex == 3
+                  ? Image.asset('images/bottom/friend_selected.png')
+                  : Image.asset('images/bottom/friend.png'),
+            ),
+            title: Text('朋友', style: TextStyle(
+                color: currentIndex == 3 ? Colors.red : Colors.black,
+                fontSize: ScreenUtil().setSp(20),
+              ),),
+          ),
+          BottomNavigationBarItem(
+            icon: Container(
+              width: ScreenUtil().setWidth(60),
+              child: currentIndex == 4
+                  ? Image.asset('images/bottom/account_selected.png')
+                  : Image.asset('images/bottom/account.png'),
+            ),
+            title: Text('账号', style: TextStyle(
+                color: currentIndex == 4 ? Colors.red : Colors.black,
+                fontSize: ScreenUtil().setSp(20),
+              ),),
           )
         ],
       ),
