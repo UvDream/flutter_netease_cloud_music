@@ -6,7 +6,6 @@ import './pages/my/my.dart';
 import './pages/friend/friend.dart';
 import './pages/video/video.dart';
 import 'package:provider/provider.dart';
-import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
