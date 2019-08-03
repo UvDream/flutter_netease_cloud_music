@@ -3,6 +3,7 @@ import 'bottom_navigation.dart';
 import 'package:provider/provider.dart';
 import './provider/count.dart';
 import './provider/find/new_dish.dart';
+import './provider/current_index.dart';
 // void main() => runApp(MyApp());
 
 // void main() => runApp(ChangeNotifierProvider(
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         // Provider<NewDishProvider>.value(value: newDish),
 
         ChangeNotifierProvider(builder: (_) => NewDishProvider()),
+        ChangeNotifierProvider(builder: (_) => CurrentIndexProvider()),
       ],
       child: MaterialApp(
         title: '网易云音乐(仿)',
