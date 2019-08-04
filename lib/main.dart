@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider<CounterBloc>.value(value: counter),
-        // 制管理恒定数据不通知视图刷新
+        // Provider<T>管理恒定数据不通知视图刷新
         // Provider<NewDishProvider>.value(value: newDish),
 
         ChangeNotifierProvider(builder: (_) => NewDishProvider()),
