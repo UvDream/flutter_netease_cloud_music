@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-05 09:57:52
+ * @LastEditTime: 2019-08-05 14:15:41
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
@@ -18,11 +18,11 @@ class TopNavigation extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: <Widget>[
-          _containPage(0xe624, '每日推荐', 24),
-          _containPage(0xe64b, '歌单', 20),
-          _containPage(0xe608, '排行榜', 20),
-          _containPage(0xe66b, '电台', 24),
-          _containPage(0xe605, '直播', 24)
+          _containPage(0xe624, '每日推荐', 24.0),
+          _containPage(0xe64b, '歌单', 20.0),
+          _containPage(0xe608, '排行榜', 20.0),
+          _containPage(0xe66b, '电台', 24.0),
+          _containPage(0xe605, '直播', 24.0)
         ],
       ),
     );
