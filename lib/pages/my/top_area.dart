@@ -9,6 +9,14 @@ class TopAreaPage extends StatelessWidget {
         height: ScreenUtil().setHeight(150),
         color: Colors.white,
         child: Container(
+          decoration: BoxDecoration(
+            border: Border(
+              bottom: BorderSide(
+                width: 1,
+                color: Color(0xffe6e6e6),
+              ),
+            ),
+          ),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
