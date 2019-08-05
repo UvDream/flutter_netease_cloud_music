@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 15:03:44
+ * @LastEditTime: 2019-08-05 09:57:52
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
@@ -49,7 +49,7 @@ class TopNavigation extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: 22, bottom: 8),
+                      margin: EdgeInsets.only(top: 16, bottom: 8),
                       width: ScreenUtil().setWidth(90),
                       height: ScreenUtil().setWidth(90),
                       alignment: Alignment.center,
