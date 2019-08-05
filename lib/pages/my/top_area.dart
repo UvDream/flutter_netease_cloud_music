@@ -38,7 +38,7 @@ class TopAreaPage extends StatelessWidget {
             height: ScreenUtil().setWidth(70),
             margin: EdgeInsets.only(bottom: 5),
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: title == '编辑' ? Colors.black12 : Colors.red,
               borderRadius: BorderRadius.circular(70),
             ),
             child: Icon(
