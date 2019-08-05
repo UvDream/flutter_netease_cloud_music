@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(builder: (_) => CurrentIndexProvider()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: '网易云音乐(仿)',
         theme: ThemeData(
           primaryColor: Colors.white,
