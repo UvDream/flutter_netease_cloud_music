@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:58
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-06 14:48:36
+ * @LastEditTime: 2019-08-06 15:27:51
  * @Description: 我的
  * @Email: uvdream@163.com
  */
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import '../../components/play.dart';
 import './top_area.dart';
 import './center_block.dart';
+import '../find/recommend_song_list.dart';
 
 class MyPage extends StatelessWidget {
   @override
@@ -33,7 +34,11 @@ class MyPage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
             child: Column(
-          children: <Widget>[TopAreaPage(), CenterBlockPage()],
+          children: <Widget>[
+            TopAreaPage(),
+            CenterBlockPage(),
+            RecommendSongList()
+          ],
         )));
   }
 }

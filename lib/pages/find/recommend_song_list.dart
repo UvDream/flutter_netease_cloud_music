@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-01 19:21:52
+ * @LastEditTime: 2019-08-06 15:27:38
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -49,7 +49,7 @@ class _RecommendSongListState extends State<RecommendSongList> {
               child: Text(
                 '推荐歌单',
                 style: TextStyle(
-                    fontSize: ScreenUtil().setSp(40),
+                    fontSize: ScreenUtil().setSp(32),
                     fontWeight: FontWeight.bold),
               ),
             ),
