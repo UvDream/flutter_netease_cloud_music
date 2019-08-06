@@ -6,6 +6,10 @@ import '../../provider/find/new_dish.dart';
 class NewDishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var dish = Provider.of<NewDishProvider>(context);
+    if (dish.songList.length == 0) {
+      dish.getNewDish();
+    }
     // Provider.of<NewDishProvider>(context).getNewDish();
     return Container(
         child: Container(

@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-06 15:10:55
+ * @LastEditTime: 2019-08-06 15:14:25
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -54,7 +54,7 @@ class _FindPageState extends State<FindPage>
                 SwiperPage(),
                 TopNavigation(),
                 RecommendSongList(),
-                // NewDishPage()
+                NewDishPage()
               ],
             ),
           )
