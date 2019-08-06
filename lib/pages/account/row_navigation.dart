@@ -10,25 +10,31 @@ class RowNavigationPage extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 8),
       child: Row(
         children: <Widget>[
-          _block(0xe614, '信息'),
-          _block(0xe62a, '商城', '赠99无线充'),
-          _block(0xe674, '演出', '刺猬'),
-          _block(0xe615, '个性皮肤'),
+          _block(0xe614, '信息', 30.0),
+          _block(0xe615, '商城', 22.0, '赠99无线充'),
+          _block(0xe674, '演出', 25.0, '刺猬'),
+          _block(0xe6b6, '个性皮肤', 25.0),
         ],
       ),
     );
   }
 
-  Widget _block(icon, title, [remark = '']) {
+  Widget _block(icon, title, size, [remark = '']) {
     return InkWell(
       onTap: () {},
       child: Container(
         width: ScreenUtil().setWidth(187.5),
         child: Column(
           children: <Widget>[
-            Icon(
-              IconData(icon, fontFamily: 'IconFont'),
-              color: Colors.red,
+            Container(
+              alignment: Alignment.center,
+              width: ScreenUtil().setWidth(65),
+              height: ScreenUtil().setWidth(65),
+              child: Icon(
+                IconData(icon, fontFamily: 'IconFont'),
+                color: Colors.red,
+                size: size,
+              ),
             ),
             Container(
               margin: EdgeInsets.only(top: 5),
