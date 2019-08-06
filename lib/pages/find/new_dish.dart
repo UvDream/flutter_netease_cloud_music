@@ -6,7 +6,7 @@ import '../../provider/find/new_dish.dart';
 class NewDishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Provider.of<NewDishProvider>(context).getNewDish();
+    // Provider.of<NewDishProvider>(context).getNewDish();
     return Container(
         child: Container(
       color: Colors.white,
