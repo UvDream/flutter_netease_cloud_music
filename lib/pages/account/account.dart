@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:45
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-07 15:51:51
+ * @LastEditTime: 2019-08-07 16:38:05
  * @Description: 账户
  * @Email: uvdream@163.com
  */
@@ -11,6 +11,7 @@ import '../../components/play.dart';
 import './is_login_top.dart';
 import './row_navigation.dart';
 import './column_block.dart';
+import './balck_vip.dart';
 
 class AccountPage extends StatelessWidget {
   @override
@@ -30,7 +31,12 @@ class AccountPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: <Widget>[IsLoginPage(), RowNavigationPage(), ColumnBlock()],
+          children: <Widget>[
+            IsLoginPage(),
+            BlackVip(),
+            RowNavigationPage(),
+            ColumnBlock()
+          ],
         ),
       ),
     );

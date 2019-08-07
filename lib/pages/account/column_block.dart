@@ -37,7 +37,7 @@ class ColumnBlock extends StatelessWidget {
       child: Column(
         children: <Widget>[
           _block(0xe658, '设置', ''),
-          _block(0xe658, '夜间模式', '', false, true),
+          _block(0xe633, '夜间模式', '', false, true),
           _block(0xe6b3, '定时关闭', ''),
           _block(0xe61b, '音乐闹钟', '', true),
         ],
