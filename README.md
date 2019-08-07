@@ -17,12 +17,12 @@
 
 > ## 发现页面
 
-![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.PNG?raw=true "首页")
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.PNG?raw=true" width="400px"  />
 
 > ## 我的界面
 
-![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/my.PNG?raw=true "我的")
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/my.PNG?raw=true" width="400px"  />
 
 > ## 账号界面
 
-![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/count.PNG?raw=true "账号")
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/count.PNG?raw=true" width="400px"  />
