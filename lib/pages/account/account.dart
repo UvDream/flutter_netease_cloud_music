@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:45
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-06 18:07:33
+ * @LastEditTime: 2019-08-07 15:51:51
  * @Description: 账户
  * @Email: uvdream@163.com
  */
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import '../../components/play.dart';
 import './is_login_top.dart';
 import './row_navigation.dart';
+import './column_block.dart';
 
 class AccountPage extends StatelessWidget {
   @override
@@ -29,10 +30,7 @@ class AccountPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: <Widget>[
-            IsLoginPage(),
-            RowNavigationPage(),
-          ],
+          children: <Widget>[IsLoginPage(), RowNavigationPage(), ColumnBlock()],
         ),
       ),
     );
