@@ -18,3 +18,11 @@
 > ## 发现页面
 
 ![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.PNG?raw=true "首页")
+
+> ## 我的界面
+
+![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/my.PNG?raw=true "我的")
+
+> ## 账号界面
+
+![Image text](https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/count.PNG?raw=true "账号")
