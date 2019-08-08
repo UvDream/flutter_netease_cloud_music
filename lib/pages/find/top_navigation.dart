@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-08 14:22:22
+ * @LastEditTime: 2019-08-08 14:57:16
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
@@ -40,7 +40,6 @@ class TopNavigation extends StatelessWidget {
         child: InkWell(
             onTap: () {
               Application.router.navigateTo(context, '/songList?id=0');
-              print('点击了');
               var now = new DateTime.now();
               var date = new DateTime(now.day);
               print(date);
@@ -54,7 +53,7 @@ class TopNavigation extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(top: 16, bottom: 8),
                       width: ScreenUtil().setWidth(90),
-                      height: ScreenUtil().setWidth(90),
+                      height: ScreenUtil().setHeight(79),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.red,
@@ -74,7 +73,7 @@ class TopNavigation extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  top: ScreenUtil().setSp(84),
+                  top: ScreenUtil().setSp(76),
                   child: title == '每日推荐'
                       ? Text(
                           '$_date',
