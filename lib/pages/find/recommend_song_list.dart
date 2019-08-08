@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-08 14:22:39
+ * @LastEditTime: 2019-08-08 14:48:20
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -79,7 +79,7 @@ class _RecommendSongListState extends State<RecommendSongList> {
       List<Widget> listWidget = SongListData.map((val) {
         return InkWell(
           onTap: () {
-            Application.router.navigateTo(context, '/songList?id=0');
+            Application.router.navigateTo(context, '/songList?id=${val['id']}');
           },
           child: Container(
             width: ScreenUtil().setWidth(218),

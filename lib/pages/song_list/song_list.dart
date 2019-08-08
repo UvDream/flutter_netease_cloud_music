@@ -10,7 +10,7 @@ class SongListPage extends StatelessWidget {
           title: Text('列表页面'),
         ),
         body: Center(
-          child: Text('列表页面'),
+          child: Text(songListId),
         ));
   }
 }
