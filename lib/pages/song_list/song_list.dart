@@ -5,6 +5,12 @@ class SongListPage extends StatelessWidget {
   SongListPage(this.songListId);
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('列表页面'),
+        ),
+        body: Center(
+          child: Text('列表页面'),
+        ));
   }
 }

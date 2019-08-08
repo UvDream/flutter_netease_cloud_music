@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-06 15:27:38
+ * @LastEditTime: 2019-08-08 14:22:39
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -12,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/http.dart';
 import '../../config/service_url.dart';
 import '../../utils/number.dart';
+import '../../routers/application.dart';
 
 class RecommendSongList extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _RecommendSongListState extends State<RecommendSongList> {
       color: Colors.white,
       width: ScreenUtil().setWidth(686),
       child: Column(
-        children: <Widget>[_title(), _songList()],
+        children: <Widget>[_title(), _songList(context)],
       ),
     ));
   }
@@ -73,20 +74,25 @@ class _RecommendSongListState extends State<RecommendSongList> {
   }
 
   // 推荐歌单
-  Widget _songList() {
+  Widget _songList(context) {
     if (SongListData.length > 0) {
       List<Widget> listWidget = SongListData.map((val) {
-        return Container(
-          width: ScreenUtil().setWidth(218),
-          child: Column(
-            children: <Widget>[
-              _songBlock(val),
-              Text(
-                val['name'],
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              )
-            ],
+        return InkWell(
+          onTap: () {
+            Application.router.navigateTo(context, '/songList?id=0');
+          },
+          child: Container(
+            width: ScreenUtil().setWidth(218),
+            child: Column(
+              children: <Widget>[
+                _songBlock(val),
+                Text(
+                  val['name'],
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                )
+              ],
+            ),
           ),
         );
       }).toList();

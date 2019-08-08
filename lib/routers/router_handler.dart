@@ -5,6 +5,5 @@ import '../pages/song_list/song_list.dart';
 Handler songListHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   String songListId = params['id'].first;
-  print('路由参数${songListId}');
   return SongListPage(songListId);
 });
