@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var counter = CounterBloc();
-    var newDish = NewDishProvider();
+    // var newDish = NewDishProvider();
     return MultiProvider(
       providers: [
         Provider<CounterBloc>.value(value: counter),
