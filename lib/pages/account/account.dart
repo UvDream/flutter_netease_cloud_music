@@ -2,12 +2,16 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:45
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 15:03:03
+ * @LastEditTime: 2019-08-07 16:38:05
  * @Description: 账户
  * @Email: uvdream@163.com
  */
 import 'package:flutter/material.dart';
 import '../../components/play.dart';
+import './is_login_top.dart';
+import './row_navigation.dart';
+import './column_block.dart';
+import './balck_vip.dart';
 
 class AccountPage extends StatelessWidget {
   @override
@@ -25,7 +29,16 @@ class AccountPage extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[PlayButton()],
       ),
-      body: Text("账户"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            IsLoginPage(),
+            BlackVip(),
+            RowNavigationPage(),
+            ColumnBlock()
+          ],
+        ),
+      ),
     );
   }
 }

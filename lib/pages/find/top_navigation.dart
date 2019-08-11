@@ -2,12 +2,13 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 08:28:16
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 15:03:44
+ * @LastEditTime: 2019-08-08 14:57:16
  * @Description: 首页顶部导航栏
  * @Email: uvdream@163.com
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../routers/application.dart';
 
 class TopNavigation extends StatelessWidget {
   @override
@@ -18,17 +19,18 @@ class TopNavigation extends StatelessWidget {
       color: Colors.white,
       child: Row(
         children: <Widget>[
-          _containPage(0xe624, '每日推荐', 24),
-          _containPage(0xe64b, '歌单', 20),
-          _containPage(0xe608, '排行榜', 20),
-          _containPage(0xe66b, '电台', 24),
-          _containPage(0xe605, '直播', 24)
+          _containPage(0xe624, '每日推荐', 24.0, context),
+          _containPage(0xe64b, '歌单', 20.0, context),
+          _containPage(0xe608, '排行榜', 20.0, context),
+          _containPage(0xe66b, '电台', 24.0, context),
+          _containPage(0xe605, '直播', 24.0, context)
         ],
       ),
     );
   }
 
-  Widget _containPage(int icon, String title, double IconSize) {
+  Widget _containPage(
+      int icon, String title, double IconSize, BuildContext context) {
     int _date = new DateTime.now().day;
     return Container(
         decoration: BoxDecoration(
@@ -37,7 +39,7 @@ class TopNavigation extends StatelessWidget {
         width: ScreenUtil().setWidth(150),
         child: InkWell(
             onTap: () {
-              print('点击了');
+              Application.router.navigateTo(context, '/songList?id=0');
               var now = new DateTime.now();
               var date = new DateTime(now.day);
               print(date);
@@ -49,9 +51,9 @@ class TopNavigation extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(top: 22, bottom: 8),
+                      margin: EdgeInsets.only(top: 16, bottom: 8),
                       width: ScreenUtil().setWidth(90),
-                      height: ScreenUtil().setWidth(90),
+                      height: ScreenUtil().setHeight(79),
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Colors.red,
@@ -71,7 +73,7 @@ class TopNavigation extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  top: ScreenUtil().setSp(84),
+                  top: ScreenUtil().setSp(76),
                   child: title == '每日推荐'
                       ? Text(
                           '$_date',

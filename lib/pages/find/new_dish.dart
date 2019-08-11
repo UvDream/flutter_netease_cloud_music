@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../config/http.dart';
-import '../../config/service_url.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../provider/find/new_dish.dart';
@@ -8,6 +6,11 @@ import '../../provider/find/new_dish.dart';
 class NewDishPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var dish = Provider.of<NewDishProvider>(context);
+    if (dish.songList.length == 0) {
+      dish.getNewDish();
+    }
+    // Provider.of<NewDishProvider>(context).getNewDish();
     return Container(
         child: Container(
       color: Colors.white,
@@ -18,9 +21,27 @@ class NewDishPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              _newSong(context),
-              _newSong(context),
-              _newSong(context),
+              _newSong(
+                context,
+                Provider.of<NewDishProvider>(context).songList[0]['blurPicUrl'],
+                Provider.of<NewDishProvider>(context).songList[0]['name'],
+                Provider.of<NewDishProvider>(context).songList[0]['artist']
+                    ['name'],
+              ),
+              _newSong(
+                context,
+                Provider.of<NewDishProvider>(context).songList[1]['blurPicUrl'],
+                Provider.of<NewDishProvider>(context).songList[1]['name'],
+                Provider.of<NewDishProvider>(context).songList[1]['artist']
+                    ['name'],
+              ),
+              _newSong(
+                context,
+                Provider.of<NewDishProvider>(context).songList[2]['blurPicUrl'],
+                Provider.of<NewDishProvider>(context).songList[2]['name'],
+                Provider.of<NewDishProvider>(context).songList[2]['artist']
+                    ['name'],
+              ),
             ],
           )
         ],
@@ -103,7 +124,7 @@ class NewDishPage extends StatelessWidget {
   }
 
 // 内容
-  Widget _newSong(context) {
+  Widget _newSong(context, url, name, auth) {
     return Container(
       width: ScreenUtil().setWidth(215),
       height: ScreenUtil().setWidth(290),
@@ -127,8 +148,7 @@ class NewDishPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                     child: FadeInImage.assetNetwork(
                       placeholder: 'images/place_block.png',
-                      image:
-                          'https://tempim-1256796114.cos-website.ap-shanghai.myqcloud.com/placeholder/260x260/ccc',
+                      image: url,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -137,13 +157,13 @@ class NewDishPage extends StatelessWidget {
               ),
             ),
             Text(
-              'data今日好声22211',
+              name,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(fontSize: ScreenUtil().setSp(24)),
             ),
             Text(
-              'data今日好声音必须好',
+              auth,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -178,11 +198,5 @@ class NewDishPage extends StatelessWidget {
     } else {
       return Text('');
     }
-  }
-
-  void getNewDish() async {
-    await fetch(servicePath['newDishApi']).then((val) {
-      print(val);
-    });
   }
 }

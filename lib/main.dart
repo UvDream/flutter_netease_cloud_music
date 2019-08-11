@@ -5,6 +5,9 @@ import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
 // void main() => runApp(MyApp());
 import './splash_screen.dart';
+import 'package:fluro/fluro.dart';
+import './routers/routes.dart';
+import './routers/application.dart';
 // void main() => runApp(ChangeNotifierProvider(
 //     builder: (context) => CounterBloc(), child: MyApp()));
 
@@ -27,6 +30,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // 注册路由
+    final router = Router();
+    Routes.configureRoutes(router);
+    Application.router = router;
+
     var counter = CounterBloc();
     // var newDish = NewDishProvider();
     return MultiProvider(
@@ -39,6 +47,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(builder: (_) => CurrentIndexProvider()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: '网易云音乐(仿)',
         theme: ThemeData(
           primaryColor: Colors.white,
