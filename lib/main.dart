@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
     Application.router = router;
 
     var counter = CounterBloc();
-    var newDish = NewDishProvider();
+    // var newDish = NewDishProvider();
     return MultiProvider(
       providers: [
         Provider<CounterBloc>.value(value: counter),
