@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-06 15:27:46
+ * @LastEditTime: 2019-08-12 17:30:00
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -22,6 +22,7 @@ class FindPage extends StatefulWidget {
 
 class _FindPageState extends State<FindPage>
     with AutomaticKeepAliveClientMixin {
+  // 保持状态
   @override
   bool get wantKeepAlive => true;
   @override

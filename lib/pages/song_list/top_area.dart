@@ -1,50 +1,38 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import '../../material/flexible_app_bar.dart';
 
 class TopArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      centerTitle: true,
-      title: Text('这是标题'),
+      // centerTitle: true,
+      // title: Text('这是标题'),
+      elevation: 0,
       backgroundColor: Colors.transparent,
       expandedHeight: 220.0,
-      floating: false,
+      // floating: false,
       pinned: true,
       bottom: _buildListHeader(context),
-      flexibleSpace: FlexibleSpaceBar(
-        background: Stack(
-          children: <Widget>[
-            ConstrainedBox(
-              constraints: const BoxConstraints.expand(),
-              child: Image.network(
-                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1545738629147&di=22e12a65bbc6c4123ae5596e24dbc5d3&imgtype=0&src=http%3A%2F%2Fpic30.photophoto.cn%2F20140309%2F0034034413812339_b.jpg',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-                  child: Opacity(
-                    opacity: .5,
-                    child: Container(
-                      child: Text('测试'),
-                    ),
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      flexibleSpace: _PlaylistDetailHeader(),
     );
   }
 
   Widget _buildListHeader(BuildContext context) {
     return MusicListHeader(1);
+  }
+}
+
+class _PlaylistDetailHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FlexibleDetailBar(
+        background: PlayListHeaderBackground(
+            imageUrl:
+                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028950957,3773753529&fm=26&gp=0.jpg'),
+        content: Container(),
+        builder: (context, t) => AppBar());
   }
 }
 
@@ -96,4 +84,32 @@ class MusicListHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(50);
+}
+
+///播放列表头部背景
+class PlayListHeaderBackground extends StatelessWidget {
+  final String imageUrl;
+
+  const PlayListHeaderBackground({Key key, @required this.imageUrl})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      fit: StackFit.passthrough,
+      children: <Widget>[
+        Opacity(
+          opacity: 1,
+          child: Image.network(
+            imageUrl,
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: Container(color: Colors.black.withOpacity(0.3)),
+        )
+      ],
+    );
+  }
 }

@@ -27,7 +27,7 @@ class SongListPage extends StatelessWidget {
   }
 }
 
-// 废弃的头部
+// 废弃的顶部
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
