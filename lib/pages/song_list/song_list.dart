@@ -75,12 +75,6 @@ class SongListPage extends StatelessWidget {
         floating: false,
         pinned: true,
         flexibleSpace: FlexibleSpaceBar(
-          centerTitle: true,
-          // title: Container(
-          //   color: Colors.red,
-          //   height: 50,
-          //   child: Text('收藏歌单'),
-          // ),
           background: Stack(
             children: <Widget>[
               ConstrainedBox(
