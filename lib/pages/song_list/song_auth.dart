@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-19 16:54:38
+ * @LastEditTime: 2019-08-19 17:00:35
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -69,9 +69,19 @@ class AuthDescription extends StatelessWidget {
       margin: EdgeInsets.only(left: ScreenUtil().setWidth(35)),
       color: Colors.red,
       width: ScreenUtil().setWidth(370),
-      height: 100,
+      height: ScreenUtil().setWidth(280),
       child: Column(
-        children: <Widget>[],
+        children: <Widget>[
+          Text(
+            '夏日的热浪,一起摇摆,让我们激情这个夏天呵呵',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: ScreenUtil().setSp(38),
+              color: Colors.white,
+            ),
+          )
+        ],
       ),
     );
   }
