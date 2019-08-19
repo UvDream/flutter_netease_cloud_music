@@ -7,12 +7,9 @@ class TopArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      // centerTitle: true,
-      // title: Text('这是标题'),
       elevation: 0,
       backgroundColor: Colors.transparent,
       expandedHeight: 220.0,
-      // floating: false,
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -28,11 +25,45 @@ class _PlaylistDetailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlexibleDetailBar(
-        background: PlayListHeaderBackground(
-            imageUrl:
-                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028950957,3773753529&fm=26&gp=0.jpg'),
-        content: Container(),
-        builder: (context, t) => AppBar());
+      background: PlayListHeaderBackground(
+          imageUrl:
+              'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028950957,3773753529&fm=26&gp=0.jpg'),
+      content: Container(),
+      builder: (context, t) => AppBar(
+            title: Text('歌单'),
+            // 解决头部问题
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+          ),
+    );
+  }
+}
+
+///播放列表头部背景
+class PlayListHeaderBackground extends StatelessWidget {
+  final String imageUrl;
+
+  const PlayListHeaderBackground({Key key, @required this.imageUrl})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      fit: StackFit.passthrough,
+      children: <Widget>[
+        Opacity(
+          opacity: 1,
+          child: Image.network(
+            imageUrl,
+            fit: BoxFit.fitWidth,
+          ),
+        ),
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+          child: Container(color: Colors.black.withOpacity(0.3)),
+        )
+      ],
+    );
   }
 }
 
@@ -84,32 +115,4 @@ class MusicListHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(50);
-}
-
-///播放列表头部背景
-class PlayListHeaderBackground extends StatelessWidget {
-  final String imageUrl;
-
-  const PlayListHeaderBackground({Key key, @required this.imageUrl})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      fit: StackFit.passthrough,
-      children: <Widget>[
-        Opacity(
-          opacity: 1,
-          child: Image.network(
-            imageUrl,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-        BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-          child: Container(color: Colors.black.withOpacity(0.3)),
-        )
-      ],
-    );
-  }
 }

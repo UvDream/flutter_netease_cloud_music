@@ -3,11 +3,13 @@ import 'package:provider/provider.dart';
 import './provider/count.dart';
 import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
+
 // void main() => runApp(MyApp());
 import './splash_screen.dart';
 import 'package:fluro/fluro.dart';
 import './routers/routes.dart';
 import './routers/application.dart';
+
 // void main() => runApp(ChangeNotifierProvider(
 //     builder: (context) => CounterBloc(), child: MyApp()));
 
