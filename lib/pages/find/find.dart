@@ -32,6 +32,9 @@ class _FindPageState extends State<FindPage>
       theme: ThemeData(primaryColor: Colors.red),
       home: Scaffold(
         appBar: AppBar(
+          // 改变状态栏字体颜色
+          //  brightness: Brightness.light,
+          // 改变状态栏背景颜色
           backgroundColor: Colors.white,
           titleSpacing: 0,
           leading: InkWell(
