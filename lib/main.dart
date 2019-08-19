@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import './provider/count.dart';
 import './provider/find/new_dish.dart';
 import './provider/current_index.dart';
-
+import './provider/song_list/song_detail.dart';
 // void main() => runApp(MyApp());
 import './splash_screen.dart';
 import 'package:fluro/fluro.dart';
@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
         Provider<CounterBloc>.value(value: counter),
         // Provider<T>管理恒定数据不通知视图刷新
         // Provider<NewDishProvider>.value(value: newDish),
-
         ChangeNotifierProvider(builder: (_) => NewDishProvider()),
         ChangeNotifierProvider(builder: (_) => CurrentIndexProvider()),
+        ChangeNotifierProvider(builder: (_) => SongDetailProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

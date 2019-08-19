@@ -2,12 +2,17 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import './bottom_list.dart';
 import './top_area.dart';
+import 'package:provider/provider.dart';
+import '../../provider/song_list/song_detail.dart';
 
 class SongListPage extends StatelessWidget {
   final String songListId;
   SongListPage(this.songListId);
   @override
   Widget build(BuildContext context) {
+    var song = Provider.of<SongDetailProvider>(context);
+    song.getSongDetail(songListId);
+    print(songListId);
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: _sliverBuilder,

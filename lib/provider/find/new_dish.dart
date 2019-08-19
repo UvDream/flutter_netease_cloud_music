@@ -13,11 +13,11 @@ class NewDishProvider with ChangeNotifier {
 
   void getNewDish() async {
     await fetch(servicePath['newDishApi']).then((val) {
-      print('-----------新歌新碟----------');
-      print(val);
+      // print('-----------新歌新碟----------');
+      // print(val);
       songList = (val['albums'] as List).cast();
-      print('新的列表');
-      print(songList);
+      // print('新的列表');
+      // print(songList);
     });
     notifyListeners();
   }
