@@ -12,6 +12,7 @@ class PlayButton extends StatelessWidget {
           child: Icon(
             IconData(0xe649, fontFamily: 'IconFont'),
             size: 25,
+            color: Colors.black,
           ),
         ),
       ),

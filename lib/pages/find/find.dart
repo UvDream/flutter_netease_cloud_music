@@ -28,38 +28,43 @@ class _FindPageState extends State<FindPage>
   @override
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
-    return Scaffold(
-      appBar: AppBar(
-        titleSpacing: 0,
-        leading: InkWell(
-          onTap: () {},
-          child: Container(
-            // color: Colors.green,
-            child: Icon(
-              IconData(0xe64f, fontFamily: 'IconFont'),
-              size: 25,
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.red),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          titleSpacing: 0,
+          leading: InkWell(
+            onTap: () {},
+            child: Container(
+              // color: Colors.green,
+              child: Icon(
+                IconData(0xe64f, fontFamily: 'IconFont'),
+                size: 25,
+                color: Colors.black,
+              ),
             ),
           ),
+          title: SearchArea(),
+          elevation: 0,
+          centerTitle: true,
+          actions: <Widget>[PlayButton()],
         ),
-        title: SearchArea(),
-        elevation: 0,
-        centerTitle: true,
-        actions: <Widget>[PlayButton()],
-      ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            color: Colors.white,
-            child: Column(
-              children: <Widget>[
-                SwiperPage(),
-                TopNavigation(),
-                RecommendSongList(),
-                NewDishPage()
-              ],
-            ),
-          )
-        ],
+        body: ListView(
+          children: <Widget>[
+            Container(
+              color: Colors.white,
+              child: Column(
+                children: <Widget>[
+                  SwiperPage(),
+                  TopNavigation(),
+                  RecommendSongList(),
+                  NewDishPage()
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
