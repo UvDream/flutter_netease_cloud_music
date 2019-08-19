@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-20 15:47:53
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-02 15:09:56
+ * @LastEditTime: 2019-08-19 10:06:06
  * @Description: 账户
  * @Email: uvdream@163.com
  */
@@ -27,7 +27,11 @@ class FriendPage extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[PlayButton()],
       ),
-      body: Text("朋友"),
+      body: Container(
+        child: Center(
+          child: Text('还在努力研发中!'),
+        ),
+      ),
     );
   }
 }
