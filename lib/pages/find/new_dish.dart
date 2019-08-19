@@ -10,43 +10,50 @@ class NewDishPage extends StatelessWidget {
     if (dish.songList.length == 0) {
       dish.getNewDish();
     }
-    // Provider.of<NewDishProvider>(context).getNewDish();
-    return Container(
+    if (Provider.of<NewDishProvider>(context).songList.length > 0) {
+      return Container(
         child: Container(
-      color: Colors.white,
-      width: ScreenUtil().setWidth(686),
-      child: Column(
-        children: <Widget>[
-          _title(context),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+          color: Colors.white,
+          width: ScreenUtil().setWidth(686),
+          child: Column(
             children: <Widget>[
-              _newSong(
-                context,
-                Provider.of<NewDishProvider>(context).songList[0]['blurPicUrl'],
-                Provider.of<NewDishProvider>(context).songList[0]['name'],
-                Provider.of<NewDishProvider>(context).songList[0]['artist']
-                    ['name'],
-              ),
-              _newSong(
-                context,
-                Provider.of<NewDishProvider>(context).songList[1]['blurPicUrl'],
-                Provider.of<NewDishProvider>(context).songList[1]['name'],
-                Provider.of<NewDishProvider>(context).songList[1]['artist']
-                    ['name'],
-              ),
-              _newSong(
-                context,
-                Provider.of<NewDishProvider>(context).songList[2]['blurPicUrl'],
-                Provider.of<NewDishProvider>(context).songList[2]['name'],
-                Provider.of<NewDishProvider>(context).songList[2]['artist']
-                    ['name'],
-              ),
+              _title(context),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  _newSong(
+                    context,
+                    Provider.of<NewDishProvider>(context).songList[0]
+                        ['blurPicUrl'],
+                    Provider.of<NewDishProvider>(context).songList[0]['name'],
+                    Provider.of<NewDishProvider>(context).songList[0]['artist']
+                        ['name'],
+                  ),
+                  _newSong(
+                    context,
+                    Provider.of<NewDishProvider>(context).songList[1]
+                        ['blurPicUrl'],
+                    Provider.of<NewDishProvider>(context).songList[1]['name'],
+                    Provider.of<NewDishProvider>(context).songList[1]['artist']
+                        ['name'],
+                  ),
+                  _newSong(
+                    context,
+                    Provider.of<NewDishProvider>(context).songList[2]
+                        ['blurPicUrl'],
+                    Provider.of<NewDishProvider>(context).songList[2]['name'],
+                    Provider.of<NewDishProvider>(context).songList[2]['artist']
+                        ['name'],
+                  ),
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ),
+      );
+    } else {
+      return Center(child: Text('数据加载中'));
+    }
   }
 
 // 标题
