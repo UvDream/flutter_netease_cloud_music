@@ -10,7 +10,7 @@ Future fetch(url, {formData}) async {
     if (formData == null) {
       res = await dio.get(url);
     } else {
-      res = await dio.get(url);
+      res = await dio.get(url, queryParameters: formData);
     }
     if (res.statusCode == 200) {
       return res.data;
