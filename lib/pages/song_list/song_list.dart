@@ -10,9 +10,9 @@ class SongListPage extends StatelessWidget {
   SongListPage(this.songListId);
   @override
   Widget build(BuildContext context) {
-    var song = Provider.of<SongDetailProvider>(context);
-    song.getSongDetail(songListId);
-    print(songListId);
+    // var song = Provider.of<SongDetailProvider>(context);
+    // song.getSongDetail(songListId);
+    // print(songListId);
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: _sliverBuilder,

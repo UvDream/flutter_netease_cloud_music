@@ -1,7 +1,17 @@
+/*
+ * @Author: wangzhongjie
+ * @Date: 2019-08-12 11:18:06
+ * @LastEditors: wangzhongjie
+ * @LastEditTime: 2019-08-19 16:56:08
+ * @Description: 顶部区域
+ * @Email: UvDream@163.com
+ */
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import '../../material/flexible_app_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './song_auth.dart';
+import './share_area.dart';
 
 class TopArea extends StatelessWidget {
   @override
@@ -9,7 +19,7 @@ class TopArea extends StatelessWidget {
     return SliverAppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
-      expandedHeight: 220.0,
+      expandedHeight: 400.0,
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -27,8 +37,8 @@ class _PlaylistDetailHeader extends StatelessWidget {
     return FlexibleDetailBar(
       background: PlayListHeaderBackground(
           imageUrl:
-              'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3028950957,3773753529&fm=26&gp=0.jpg'),
-      content: Container(),
+              'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
+      content: TopContent(),
       builder: (context, t) => AppBar(
             title: Text('歌单'),
             // 解决头部问题
@@ -115,4 +125,20 @@ class MusicListHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(50);
+}
+
+class TopContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      margin: EdgeInsets.only(top: 150),
+      child: Column(
+        children: <Widget>[
+          AuthDescription(),
+          ShareArea(),
+        ],
+      ),
+    );
+  }
 }
