@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 10:13:20
+ * @LastEditTime: 2019-08-20 10:21:16
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -67,7 +67,6 @@ class AuthDescription extends StatelessWidget {
   Widget _description() {
     return Container(
       margin: EdgeInsets.only(left: ScreenUtil().setWidth(35)),
-      color: Colors.yellow,
       width: ScreenUtil().setWidth(370),
       height: ScreenUtil().setWidth(280),
       child: Column(
@@ -81,7 +80,8 @@ class AuthDescription extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          _authLine()
+          _authLine(),
+          _message()
         ],
       ),
     );
@@ -89,6 +89,7 @@ class AuthDescription extends StatelessWidget {
 
   Widget _authLine() {
     return Container(
+      margin: EdgeInsets.only(top: 10),
       child: Row(
         children: <Widget>[
           Stack(
@@ -121,7 +122,29 @@ class AuthDescription extends StatelessWidget {
                   ))
             ],
           ),
-          Text('解忧杂货店一号铺'),
+          Container(
+            margin: EdgeInsets.only(left: 4),
+            child: Text('解忧杂货店一号铺'),
+          ),
+          Icon(Icons.chevron_right, color: Colors.white),
+        ],
+      ),
+    );
+  }
+
+  Widget _message() {
+    return Container(
+      margin: EdgeInsets.only(top: 10),
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: ScreenUtil().setWidth(245),
+            child: Text(
+              '你常常会说你和我道不同不为谋,可以成为敌人',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
           Icon(Icons.chevron_right, color: Colors.white),
         ],
       ),

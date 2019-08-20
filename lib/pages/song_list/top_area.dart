@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-19 16:56:08
+ * @LastEditTime: 2019-08-20 10:47:38
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -19,7 +19,7 @@ class TopArea extends StatelessWidget {
     return SliverAppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
-      expandedHeight: 400.0,
+      expandedHeight: ScreenUtil().setHeight(615),
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -131,8 +131,7 @@ class TopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      margin: EdgeInsets.only(top: 150),
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(180)),
       child: Column(
         children: <Widget>[
           AuthDescription(),
