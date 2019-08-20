@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import './bottom_list.dart';
 import './top_area.dart';

@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:31:28
+ * @LastEditTime: 2019-08-20 15:33:52
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -42,6 +42,7 @@ class _PlaylistDetailHeader extends StatelessWidget {
               'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
       content: TopContent(),
       builder: (context, t) => AppBar(
+            brightness: Brightness.dark,
             leading: InkWell(
               onTap: () {
                 Navigator.pop(context);
