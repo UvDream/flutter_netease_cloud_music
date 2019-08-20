@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 10:47:38
+ * @LastEditTime: 2019-08-20 11:30:32
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -40,6 +40,7 @@ class _PlaylistDetailHeader extends StatelessWidget {
               'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
       content: TopContent(),
       builder: (context, t) => AppBar(
+            centerTitle: true,
             title: Text('歌单'),
             // 解决头部问题
             backgroundColor: Colors.transparent,
