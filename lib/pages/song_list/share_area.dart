@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:55:23
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 11:29:40
+ * @LastEditTime: 2019-08-20 15:08:27
  * @Description: 顶部分享区域
  * @Email: UvDream@163.com
  */
@@ -14,8 +14,8 @@ class ShareArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 24.0),
-      height: ScreenUtil().setHeight(100),
+      margin: EdgeInsets.only(top: 0),
+      height: ScreenUtil().setHeight(130),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -30,31 +30,34 @@ class ShareArea extends StatelessWidget {
 
   Widget _iconBlock(icon, num) {
     return Container(
-        // color: Colors.red,
-        margin: EdgeInsets.only(left: 10),
-        width: ScreenUtil().setWidth(150),
-        child: InkWell(
-          onTap: () {},
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                // color: Colors.orange,
-                width: ScreenUtil().setHeight(60),
-                height: ScreenUtil().setHeight(60),
-                child: Icon(
-                  IconData(icon, fontFamily: 'IconFont'),
-                  color: Colors.white,
-                  size: 35,
+      width: ScreenUtil().setWidth(150),
+      height: ScreenUtil().setHeight(200),
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(20)),
+      child: InkWell(
+        onTap: () {},
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: Icon(
+                IconData(icon, fontFamily: 'IconFont'),
+                color: Colors.white,
+                size: 32,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                height: ScreenUtil().setHeight(150),
+                margin: EdgeInsets.only(top: ScreenUtil().setHeight(10.0)),
+                child: Text(
+                  '$num',
+                  style: TextStyle(
+                      color: Colors.white, fontSize: ScreenUtil().setSp(25)),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 5),
-                child: Text('$num'),
-              )
-            ],
-          ),
-        ));
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

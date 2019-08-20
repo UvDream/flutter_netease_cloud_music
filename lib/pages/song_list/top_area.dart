@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 14:33:17
+ * @LastEditTime: 2019-08-20 15:06:27
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -20,7 +20,7 @@ class TopArea extends StatelessWidget {
       elevation: 0,
       leading: Icon(Icons.keyboard_arrow_left, color: Colors.white),
       backgroundColor: Colors.transparent,
-      expandedHeight: ScreenUtil().setHeight(615),
+      expandedHeight: ScreenUtil().setHeight(620),
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -49,7 +49,6 @@ class _PlaylistDetailHeader extends StatelessWidget {
                 child: Icon(Icons.chevron_left, color: Colors.white),
               ),
             ),
-
             centerTitle: true,
             title: Text(
               '歌单',
@@ -145,7 +144,7 @@ class TopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: ScreenUtil().setHeight(180)),
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(142.0)),
       child: Column(
         children: <Widget>[
           AuthDescription(),

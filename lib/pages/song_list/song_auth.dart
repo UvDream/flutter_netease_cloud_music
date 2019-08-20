@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 10:21:16
+ * @LastEditTime: 2019-08-20 15:03:46
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -89,7 +89,7 @@ class AuthDescription extends StatelessWidget {
 
   Widget _authLine() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(10)),
       child: Row(
         children: <Widget>[
           Stack(
@@ -124,7 +124,10 @@ class AuthDescription extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(left: 4),
-            child: Text('解忧杂货店一号铺'),
+            child: Text(
+              '解忧杂货店一号铺',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
           Icon(Icons.chevron_right, color: Colors.white),
         ],
@@ -134,13 +137,14 @@ class AuthDescription extends StatelessWidget {
 
   Widget _message() {
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(10)),
       child: Row(
         children: <Widget>[
           Container(
             width: ScreenUtil().setWidth(245),
             child: Text(
               '你常常会说你和我道不同不为谋,可以成为敌人',
+              style: TextStyle(color: Colors.white),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
