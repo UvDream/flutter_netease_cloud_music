@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-07-29 11:43:47
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 10:04:05
+ * @LastEditTime: 2019-08-20 14:16:53
  * @Description: 推荐歌单
  * @Email: uvdream@163.com
  */
@@ -15,6 +15,8 @@ import '../../utils/number.dart';
 import '../../routers/application.dart';
 
 class RecommendSongList extends StatefulWidget {
+  final BuildContext buildContext;
+  RecommendSongList({this.buildContext});
   @override
   _RecommendSongListState createState() => _RecommendSongListState();
 }
@@ -82,7 +84,8 @@ class _RecommendSongListState extends State<RecommendSongList> {
       List<Widget> listWidget = SongListData.map((val) {
         return InkWell(
           onTap: () {
-            Application.router.navigateTo(context, '/songList?id=${val['id']}');
+            Application.router
+                .navigateTo(widget.buildContext, '/songList?id=${val['id']}');
           },
           child: Container(
             width: ScreenUtil().setWidth(218),
