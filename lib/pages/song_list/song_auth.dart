@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:03:46
+ * @LastEditTime: 2019-08-20 15:30:43
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -13,6 +13,7 @@ class AuthDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: ScreenUtil().setHeight(142.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

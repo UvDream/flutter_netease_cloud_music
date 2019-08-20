@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:14:00
+ * @LastEditTime: 2019-08-20 15:31:28
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -21,7 +21,7 @@ class TopArea extends StatelessWidget {
       leading:
           Icon(IconData(0xe707, fontFamily: 'IconFont'), color: Colors.white),
       backgroundColor: Colors.transparent,
-      expandedHeight: ScreenUtil().setHeight(620),
+      expandedHeight: ScreenUtil().setHeight(550),
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -146,7 +146,6 @@ class TopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: ScreenUtil().setHeight(142.0)),
       child: Column(
         children: <Widget>[
           AuthDescription(),
