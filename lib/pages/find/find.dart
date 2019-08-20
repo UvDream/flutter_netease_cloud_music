@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 14:19:32
+ * @LastEditTime: 2019-08-20 14:33:26
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -14,8 +14,6 @@ import './top_navigation.dart';
 import './recommend_song_list.dart';
 import './new_dish.dart';
 import '../../components/play.dart';
-import '../../routers/application.dart';
-import './Test.dart';
 
 class FindPage extends StatefulWidget {
   @override

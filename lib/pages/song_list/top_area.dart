@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 11:30:32
+ * @LastEditTime: 2019-08-20 14:33:17
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -18,6 +18,7 @@ class TopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       elevation: 0,
+      leading: Icon(Icons.keyboard_arrow_left, color: Colors.white),
       backgroundColor: Colors.transparent,
       expandedHeight: ScreenUtil().setHeight(615),
       pinned: true,
@@ -40,8 +41,20 @@ class _PlaylistDetailHeader extends StatelessWidget {
               'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
       content: TopContent(),
       builder: (context, t) => AppBar(
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                child: Icon(Icons.chevron_left, color: Colors.white),
+              ),
+            ),
+
             centerTitle: true,
-            title: Text('歌单'),
+            title: Text(
+              '歌单',
+              style: TextStyle(color: Colors.white),
+            ),
             // 解决头部问题
             backgroundColor: Colors.transparent,
             elevation: 0,
