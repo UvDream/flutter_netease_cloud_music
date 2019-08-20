@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:06:27
+ * @LastEditTime: 2019-08-20 15:14:00
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -18,7 +18,8 @@ class TopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       elevation: 0,
-      leading: Icon(Icons.keyboard_arrow_left, color: Colors.white),
+      leading:
+          Icon(IconData(0xe707, fontFamily: 'IconFont'), color: Colors.white),
       backgroundColor: Colors.transparent,
       expandedHeight: ScreenUtil().setHeight(620),
       pinned: true,
@@ -46,7 +47,8 @@ class _PlaylistDetailHeader extends StatelessWidget {
                 Navigator.pop(context);
               },
               child: Container(
-                child: Icon(Icons.chevron_left, color: Colors.white),
+                child: Icon(IconData(0xe707, fontFamily: 'IconFont'),
+                    color: Colors.white),
               ),
             ),
             centerTitle: true,
