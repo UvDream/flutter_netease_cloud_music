@@ -26,3 +26,7 @@
 > ## 账号界面
 
 <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/count.PNG?raw=true" width="200px"  />
+
+> ## 推荐歌单列表
+
+> <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/songList.PNG?raw=true" width="200px"  />
