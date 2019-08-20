@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-02-18 17:08:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-12 17:30:00
+ * @LastEditTime: 2019-08-20 09:57:15
  * @Description: 发现
  * @Email: uvdream@163.com
  */
@@ -29,11 +29,12 @@ class _FindPageState extends State<FindPage>
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.red),
       home: Scaffold(
         appBar: AppBar(
           // 改变状态栏字体颜色
-          //  brightness: Brightness.light,
+          brightness: Brightness.light,
           // 改变状态栏背景颜色
           backgroundColor: Colors.white,
           titleSpacing: 0,
