@@ -59,7 +59,7 @@ class _SwiperPageState extends State<SwiperPage> {
   }
 
   void _getBanner() async {
-    print('开始');
+    // print('开始');
     var formData = {'type': 'iphone'};
     await fetch(servicePath['findSwiper'], formData: formData).then((val) {
       // print('返回参数了');
