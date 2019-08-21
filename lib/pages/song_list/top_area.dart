@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-19 16:56:08
+ * @LastEditTime: 2019-08-20 15:33:52
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -18,8 +18,10 @@ class TopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       elevation: 0,
+      leading:
+          Icon(IconData(0xe707, fontFamily: 'IconFont'), color: Colors.white),
       backgroundColor: Colors.transparent,
-      expandedHeight: 400.0,
+      expandedHeight: ScreenUtil().setHeight(550),
       pinned: true,
       bottom: _buildListHeader(context),
       flexibleSpace: _PlaylistDetailHeader(),
@@ -40,7 +42,21 @@ class _PlaylistDetailHeader extends StatelessWidget {
               'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
       content: TopContent(),
       builder: (context, t) => AppBar(
-            title: Text('歌单'),
+            brightness: Brightness.dark,
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                child: Icon(IconData(0xe707, fontFamily: 'IconFont'),
+                    color: Colors.white),
+              ),
+            ),
+            centerTitle: true,
+            title: Text(
+              '歌单',
+              style: TextStyle(color: Colors.white),
+            ),
             // 解决头部问题
             backgroundColor: Colors.transparent,
             elevation: 0,
@@ -131,8 +147,6 @@ class TopContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
-      margin: EdgeInsets.only(top: 150),
       child: Column(
         children: <Widget>[
           AuthDescription(),
