@@ -2,26 +2,33 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-09 15:24:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 10:47:55
+ * @LastEditTime: 2019-08-22 13:50:30
  * @Description: 歌单详情进入页面
  * @Email: UvDream@163.com
  */
 import 'package:flutter/material.dart';
 import './bottom_list.dart';
+import 'package:async/async.dart';
 import './top_area.dart';
 import '../../provider/song_list/song_detail.dart';
 import 'package:provider/provider.dart';
 
-class SongListPage extends StatelessWidget {
+class SongListPage extends StatefulWidget {
   final String songListId;
   SongListPage(this.songListId);
+  @override
+  _SongListPageState createState() => _SongListPageState();
+}
+
+class _SongListPageState extends State<SongListPage> {
+  AsyncMemoizer _memoizer = AsyncMemoizer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder(
         future: _getDetail(context),
         builder: (context, snapshot) {
-          if (snapshot.hasData) {
+          if (snapshot.connectionState != ConnectionState.waiting) {
             return NestedScrollView(
               headerSliverBuilder: _sliverBuilder,
               body: BottomList(),
@@ -49,11 +56,58 @@ class SongListPage extends StatelessWidget {
     ];
   }
 
-  Future _getDetail(BuildContext context) async {
-    await Provider.of<SongDetailProvider>(context).getSongDetail(songListId);
-    return true;
+  _getDetail(BuildContext context) {
+    return _memoizer.runOnce(() async {
+      return await Provider.of<SongDetailProvider>(context)
+          .getSongDetail(widget.songListId);
+    });
+    // await Provider.of<SongDetailProvider>(context)
+    //     .getSongDetail(widget.songListId);
+    // return true;
   }
 }
+// class SongListPage extends StatelessWidget {
+//   final String songListId;
+//   SongListPage(this.songListId);
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: FutureBuilder(
+//         future: _getDetail(context),
+//         builder: (context, snapshot) {
+//           if (snapshot.hasData) {
+//             return NestedScrollView(
+//               headerSliverBuilder: _sliverBuilder,
+//               body: BottomList(),
+//             );
+//           } else {
+//             return Scaffold(
+//               appBar: AppBar(title: Text('')),
+//               body: Center(
+//                 child: Text('数据加载中!'),
+//               ),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+
+//   List<Widget> _sliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
+//     return <Widget>[
+//       TopArea(),
+//       // SliverPersistentHeader(
+//       //   pinned: true,
+//       //   delegate: _SliverAppBarDelegate(),
+//       // )
+//     ];
+//   }
+
+//   Future _getDetail(BuildContext context) async {
+//     await Provider.of<SongDetailProvider>(context).getSongDetail(songListId);
+//     return true;
+//   }
+// }
 
 // 废弃的顶部
 // class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
