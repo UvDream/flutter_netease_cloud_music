@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:55:23
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:12:28
+ * @LastEditTime: 2019-08-22 09:27:21
  * @Description: 顶部分享区域
  * @Email: UvDream@163.com
  */
@@ -30,7 +30,7 @@ class ShareArea extends StatelessWidget {
 
   Widget _iconBlock(icon, num) {
     return Container(
-      width: ScreenUtil().setWidth(150),
+      width: ScreenUtil().setWidth(180),
       height: ScreenUtil().setHeight(200),
       margin: EdgeInsets.only(top: ScreenUtil().setHeight(20)),
       child: InkWell(

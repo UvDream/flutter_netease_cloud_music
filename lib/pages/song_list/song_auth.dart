@@ -2,30 +2,33 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:30:43
+ * @LastEditTime: 2019-08-22 09:52:15
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../provider/song_list/song_detail.dart';
+import 'package:provider/provider.dart';
 
 class AuthDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var message = Provider.of<SongDetailProvider>(context);
     return Container(
       margin: EdgeInsets.only(top: ScreenUtil().setHeight(142.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _imgAvatar(),
-          _description(),
+          _imgAvatar(context, message.songImg),
+          _description(context, message),
         ],
       ),
     );
   }
 
 // 头像区域
-  Widget _imgAvatar() {
+  Widget _imgAvatar(context, imgUrl) {
     return Container(
       child: Stack(
         children: <Widget>[
@@ -36,8 +39,7 @@ class AuthDescription extends StatelessWidget {
               borderRadius: BorderRadius.circular(4),
               child: FadeInImage.assetNetwork(
                 placeholder: 'images/place_block.png',
-                image:
-                    'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg',
+                image: imgUrl,
                 fit: BoxFit.fill,
               ),
             ),
@@ -65,7 +67,7 @@ class AuthDescription extends StatelessWidget {
   }
 
   // 作者以及简介
-  Widget _description() {
+  Widget _description(context, message) {
     return Container(
       margin: EdgeInsets.only(left: ScreenUtil().setWidth(35)),
       width: ScreenUtil().setWidth(370),
@@ -73,7 +75,7 @@ class AuthDescription extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            '夏日的热浪,一起摇摆,让我们激情这个夏天呵呵',
+            message.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -82,7 +84,7 @@ class AuthDescription extends StatelessWidget {
             ),
           ),
           _authLine(),
-          _message()
+          _message(message)
         ],
       ),
     );
@@ -136,7 +138,7 @@ class AuthDescription extends StatelessWidget {
     );
   }
 
-  Widget _message() {
+  Widget _message(message) {
     return Container(
       margin: EdgeInsets.only(top: ScreenUtil().setHeight(10)),
       child: Row(
@@ -144,7 +146,7 @@ class AuthDescription extends StatelessWidget {
           Container(
             width: ScreenUtil().setWidth(245),
             child: Text(
-              '你常常会说你和我道不同不为谋,可以成为敌人',
+              message.description,
               style: TextStyle(color: Colors.white),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

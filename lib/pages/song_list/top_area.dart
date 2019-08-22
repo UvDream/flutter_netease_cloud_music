@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-20 15:33:52
+ * @LastEditTime: 2019-08-22 09:39:41
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -12,6 +12,8 @@ import '../../material/flexible_app_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './song_auth.dart';
 import './share_area.dart';
+import '../../provider/song_list/song_detail.dart';
+import 'package:provider/provider.dart';
 
 class TopArea extends StatelessWidget {
   @override
@@ -36,10 +38,9 @@ class TopArea extends StatelessWidget {
 class _PlaylistDetailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var message = Provider.of<SongDetailProvider>(context);
     return FlexibleDetailBar(
-      background: PlayListHeaderBackground(
-          imageUrl:
-              'http://p2.music.126.net/yWT7cg3Qgl2ngqq3FztnWQ==/109951164291056003.jpg'),
+      background: PlayListHeaderBackground(imageUrl: message.songImg),
       content: TopContent(),
       builder: (context, t) => AppBar(
             brightness: Brightness.dark,

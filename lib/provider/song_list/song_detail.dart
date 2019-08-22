@@ -17,9 +17,8 @@ class SongDetailProvider with ChangeNotifier {
     var formData = {'id': id};
     await fetch(servicePath['songListDetail'], formData: formData).then((val) {
       print('-----歌单详情-----');
-      print(val['code']);
-      print(val['playlist']);
-      print('实际数据');
+      print(val);
+      print('+++++++实际数据++++++');
       title = val['playlist']['name'];
       print(title);
       description = val['playlist']['description'];
@@ -28,5 +27,6 @@ class SongDetailProvider with ChangeNotifier {
       print(songList);
       songImg = val['playlist']['coverImgUrl'];
     });
+    notifyListeners();
   }
 }
