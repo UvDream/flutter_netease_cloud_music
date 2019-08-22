@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 09:39:41
+ * @LastEditTime: 2019-08-22 15:51:31
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -18,6 +18,7 @@ import 'package:provider/provider.dart';
 class TopArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var message = Provider.of<SongDetailProvider>(context);
     return SliverAppBar(
       elevation: 0,
       leading:
@@ -25,22 +26,23 @@ class TopArea extends StatelessWidget {
       backgroundColor: Colors.transparent,
       expandedHeight: ScreenUtil().setHeight(550),
       pinned: true,
-      bottom: _buildListHeader(context),
-      flexibleSpace: _PlaylistDetailHeader(),
+      bottom: _buildListHeader(context, message.trackCount),
+      flexibleSpace: _PlaylistDetailHeader(message.songImg),
     );
   }
 
-  Widget _buildListHeader(BuildContext context) {
-    return MusicListHeader(1);
+  Widget _buildListHeader(BuildContext context, trackCount) {
+    return MusicListHeader(trackCount);
   }
 }
 
 class _PlaylistDetailHeader extends StatelessWidget {
+  final String songImg;
+  _PlaylistDetailHeader(this.songImg);
   @override
   Widget build(BuildContext context) {
-    var message = Provider.of<SongDetailProvider>(context);
     return FlexibleDetailBar(
-      background: PlayListHeaderBackground(imageUrl: message.songImg),
+      background: PlayListHeaderBackground(imageUrl: songImg),
       content: TopContent(),
       builder: (context, t) => AppBar(
             brightness: Brightness.dark,

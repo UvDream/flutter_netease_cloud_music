@@ -2,25 +2,28 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:55:23
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 09:27:21
+ * @LastEditTime: 2019-08-22 15:33:56
  * @Description: 顶部分享区域
  * @Email: UvDream@163.com
  */
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../provider/song_list/song_detail.dart';
+import 'package:provider/provider.dart';
 
 class ShareArea extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var message = Provider.of<SongDetailProvider>(context);
     return Container(
       margin: EdgeInsets.only(top: 0),
       height: ScreenUtil().setHeight(130),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _iconBlock(0xe626, 71),
-          _iconBlock(0xe654, 71),
+          _iconBlock(0xe626, message.commentCount),
+          _iconBlock(0xe654, message.shareCount),
           _iconBlock(0xe61c, '下载'),
           _iconBlock(0xe700, '多选'),
         ],

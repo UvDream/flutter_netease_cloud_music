@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-09 15:24:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 13:50:30
+ * @LastEditTime: 2019-08-22 14:39:34
  * @Description: 歌单详情进入页面
  * @Email: UvDream@163.com
  */
@@ -35,7 +35,10 @@ class _SongListPageState extends State<SongListPage> {
             );
           } else {
             return Scaffold(
-              appBar: AppBar(title: Text('')),
+              appBar: AppBar(
+                title: Text(''),
+                elevation: 0,
+              ),
               body: Center(
                 child: Text('数据加载中!'),
               ),
