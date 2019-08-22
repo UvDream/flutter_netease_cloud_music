@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 09:52:15
+ * @LastEditTime: 2019-08-22 14:02:08
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -146,7 +146,7 @@ class AuthDescription extends StatelessWidget {
           Container(
             width: ScreenUtil().setWidth(245),
             child: Text(
-              message.description,
+              message.description == null ? '暂无描述' : message.description,
               style: TextStyle(color: Colors.white),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
