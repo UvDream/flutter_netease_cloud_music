@@ -9,15 +9,27 @@ class SongListPage extends StatelessWidget {
   SongListPage(this.songListId);
   @override
   Widget build(BuildContext context) {
-    var song = Provider.of<SongDetailProvider>(context);
-    song.getSongDetail(songListId);
-    // print(songListId);
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: _sliverBuilder,
-        body: BottomList(),
-      ),
-    );
+        body: FutureBuilder(
+      future: _getDetail(context),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return NestedScrollView(
+            headerSliverBuilder: _sliverBuilder,
+            body: BottomList(),
+          );
+        } else {
+          return Center(
+            child: Text('数据加载中!'),
+          );
+        }
+      },
+    )
+        // NestedScrollView(
+        //   headerSliverBuilder: _sliverBuilder,
+        //   body: BottomList(),
+        // ),
+        );
   }
 
   List<Widget> _sliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
@@ -28,6 +40,11 @@ class SongListPage extends StatelessWidget {
       //   delegate: _SliverAppBarDelegate(),
       // )
     ];
+  }
+
+  Future _getDetail(BuildContext context) async {
+    await Provider.of<SongDetailProvider>(context).getSongDetail(songListId);
+    return true;
   }
 }
 

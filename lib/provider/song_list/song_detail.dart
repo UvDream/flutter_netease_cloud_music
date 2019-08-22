@@ -12,9 +12,12 @@ class SongDetailProvider with ChangeNotifier {
   var songImg = '';
   // 歌曲列表
   List<Map> songList = [];
+  String code = '';
 
   void getSongDetail(id) async {
     var formData = {'id': id};
+    code = id;
+    title = '';
     await fetch(servicePath['songListDetail'], formData: formData).then((val) {
       print('-----歌单详情-----');
       print(val);
