@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-09 15:24:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 14:39:34
+ * @LastEditTime: 2019-08-22 15:58:26
  * @Description: 歌单详情进入页面
  * @Email: UvDream@163.com
  */
@@ -31,7 +31,8 @@ class _SongListPageState extends State<SongListPage> {
           if (snapshot.connectionState != ConnectionState.waiting) {
             return NestedScrollView(
               headerSliverBuilder: _sliverBuilder,
-              body: BottomList(),
+              body:
+                  BottomList(Provider.of<SongDetailProvider>(context).songList),
             );
           } else {
             return Scaffold(
