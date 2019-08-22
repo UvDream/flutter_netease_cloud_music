@@ -1,3 +1,11 @@
+/*
+ * @Author: wangzhongjie
+ * @Date: 2019-08-09 15:24:30
+ * @LastEditors: wangzhongjie
+ * @LastEditTime: 2019-08-22 10:47:55
+ * @Description: 歌单详情进入页面
+ * @Email: UvDream@163.com
+ */
 import 'package:flutter/material.dart';
 import './bottom_list.dart';
 import './top_area.dart';
@@ -10,26 +18,25 @@ class SongListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(
-      future: _getDetail(context),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return NestedScrollView(
-            headerSliverBuilder: _sliverBuilder,
-            body: BottomList(),
-          );
-        } else {
-          return Center(
-            child: Text('数据加载中!'),
-          );
-        }
-      },
-    )
-        // NestedScrollView(
-        //   headerSliverBuilder: _sliverBuilder,
-        //   body: BottomList(),
-        // ),
-        );
+      body: FutureBuilder(
+        future: _getDetail(context),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return NestedScrollView(
+              headerSliverBuilder: _sliverBuilder,
+              body: BottomList(),
+            );
+          } else {
+            return Scaffold(
+              appBar: AppBar(title: Text('')),
+              body: Center(
+                child: Text('数据加载中!'),
+              ),
+            );
+          }
+        },
+      ),
+    );
   }
 
   List<Widget> _sliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
