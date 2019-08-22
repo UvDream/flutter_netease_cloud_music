@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 14:02:08
+ * @LastEditTime: 2019-08-22 14:24:51
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../provider/song_list/song_detail.dart';
 import 'package:provider/provider.dart';
+import '../../utils/number.dart';
 
 class AuthDescription extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class AuthDescription extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          _imgAvatar(context, message.songImg),
+          _imgAvatar(context, message.songImg, message.playCount),
           _description(context, message),
         ],
       ),
@@ -28,7 +29,7 @@ class AuthDescription extends StatelessWidget {
   }
 
 // 头像区域
-  Widget _imgAvatar(context, imgUrl) {
+  Widget _imgAvatar(context, imgUrl, count) {
     return Container(
       child: Stack(
         children: <Widget>[
@@ -55,7 +56,7 @@ class AuthDescription extends StatelessWidget {
                   size: 15,
                 ),
                 Text(
-                  '10万',
+                  '${getFormattedNumber(count)}',
                   style: TextStyle(color: Colors.white),
                 ),
               ],
@@ -83,14 +84,14 @@ class AuthDescription extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          _authLine(),
+          _authLine(message),
           _message(message)
         ],
       ),
     );
   }
 
-  Widget _authLine() {
+  Widget _authLine(message) {
     return Container(
       margin: EdgeInsets.only(top: ScreenUtil().setHeight(10)),
       child: Row(
@@ -103,8 +104,7 @@ class AuthDescription extends StatelessWidget {
                   borderRadius: BorderRadius.circular(66),
                   child: FadeInImage.assetNetwork(
                     placeholder: 'images/place_block.png',
-                    image:
-                        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1566277180648&di=cdd2dd183fff7739ca8f9801616500e4&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201711%2F10%2F20171110225150_ym2jw.jpeg',
+                    image: message.avatarUrl,
                   ),
                 ),
               ),
@@ -128,7 +128,7 @@ class AuthDescription extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 4),
             child: Text(
-              '解忧杂货店一号铺',
+              message.nickName,
               style: TextStyle(color: Colors.white),
             ),
           ),

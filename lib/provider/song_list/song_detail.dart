@@ -12,20 +12,26 @@ class SongDetailProvider with ChangeNotifier {
   var songImg = '';
   // 歌曲列表
   List<Map> songList = [];
+  // 作者名字
+  var nickName = '';
+  //作者头像
+  var avatarUrl = '';
+  // 播放量
+  int playCount = 0;
 
   void getSongDetail(id) async {
     var formData = {'id': id};
     await fetch(servicePath['songListDetail'], formData: formData).then((val) {
       print('-----歌单详情-----');
-      print(val);
+      print(val['playlist']['creator']['nickname']);
       print('+++++++实际数据++++++');
       title = val['playlist']['name'];
-      print(title);
       description = val['playlist']['description'];
-      print(description);
       songList = (val['playlist']['tracks'] as List).cast();
-      print(songList);
       songImg = val['playlist']['coverImgUrl'];
+      nickName = val['playlist']['creator']['nickname'];
+      avatarUrl = val['playlist']['creator']['avatarUrl'];
+      playCount = val['playlist']['playCount'];
     });
     notifyListeners();
   }
