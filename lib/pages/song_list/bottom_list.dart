@@ -62,11 +62,15 @@ class BottomList extends StatelessWidget {
                           fontSize: ScreenUtil().setSp(20),
                         ),
                       ),
-                      Text(
-                        '${songList[index]['al']['name']}',
-                        style: TextStyle(
-                          color: Colors.black45,
-                          fontSize: ScreenUtil().setSp(20),
+                      Expanded(
+                        child: Text(
+                          '${songList[index]['al']['name']}',
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.black45,
+                            fontSize: ScreenUtil().setSp(20),
+                          ),
                         ),
                       )
                     ],
