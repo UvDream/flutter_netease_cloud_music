@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-09 15:24:30
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-23 15:49:29
+ * @LastEditTime: 2019-08-23 16:59:07
  * @Description: 歌单详情进入页面
  * @Email: UvDream@163.com
  */
@@ -24,6 +24,7 @@ class _SongListPageState extends State<SongListPage> {
   AsyncMemoizer _memoizer = AsyncMemoizer();
   @override
   Widget build(BuildContext context) {
+    print('歌曲id+${widget.songListId}');
     return Scaffold(
       body: FutureBuilder(
         future: _getDetail(context),

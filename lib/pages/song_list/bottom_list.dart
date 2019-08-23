@@ -85,7 +85,7 @@ class BottomList extends StatelessWidget {
               width: ScreenUtil().setWidth(100),
               height: ScreenUtil().setHeight(70),
               // color: Colors.green,
-              child: songList[index]['mv'] == 0
+              child: songList[index]['mv'] != 0
                   ? Icon(
                       IconData(0xe623, fontFamily: 'IconFont'),
                       size: 20,
