@@ -6,8 +6,6 @@ class BottomList extends StatelessWidget {
   BottomList(this.songList);
   @override
   Widget build(BuildContext context) {
-    print('列表数据');
-    print(songList[0]);
     return Container(
       child: ListView.builder(
         padding: EdgeInsets.only(top: 0),
@@ -37,9 +35,11 @@ class BottomList extends StatelessWidget {
             ),
           ),
           Container(
+            // color: Colors.red,
             width: ScreenUtil().setWidth(500),
             alignment: Alignment.centerLeft,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
                   alignment: Alignment.centerLeft,
@@ -51,12 +51,54 @@ class BottomList extends StatelessWidget {
                 ),
                 Container(
                   child: Row(
-                    children: <Widget>[_authLine(songList[index]['ar'])],
+                    children: <Widget>[
+                      _authLine(songList[index]['ar']),
+                      Text(
+                        '-',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: ScreenUtil().setSp(20),
+                        ),
+                      ),
+                      Text(
+                        '${songList[index]['al']['name']}',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: ScreenUtil().setSp(20),
+                        ),
+                      )
+                    ],
                   ),
                 )
               ],
             ),
-          )
+          ),
+          InkWell(
+            onTap: () {},
+            child: Container(
+              width: ScreenUtil().setWidth(100),
+              height: ScreenUtil().setHeight(70),
+              // color: Colors.green,
+              child: Icon(
+                IconData(0xe623, fontFamily: 'IconFont'),
+                size: 20,
+                color: Colors.black45,
+              ),
+            ),
+          ),
+          InkWell(
+              onTap: () {},
+              child: Container(
+                width: ScreenUtil().setWidth(60),
+                height: ScreenUtil().setHeight(70),
+                child: Icon(
+                  IconData(
+                    0xe612,
+                    fontFamily: "IconFont",
+                  ),
+                  color: Colors.black45,
+                ),
+              )),
         ],
       ),
     );
@@ -71,6 +113,12 @@ class BottomList extends StatelessWidget {
         name = '$name' + '/' + '${item['name']}';
       }
     }
-    return Text(name);
+    return Text(
+      name,
+      style: TextStyle(
+        color: Colors.black45,
+        fontSize: ScreenUtil().setSp(20),
+      ),
+    );
   }
 }
