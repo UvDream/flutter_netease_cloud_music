@@ -41,10 +41,18 @@ class BottomList extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Column(
               children: <Widget>[
-                Text(
-                  '${songList[index]['name']}',
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                Container(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '${songList[index]['name']}',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+                Container(
+                  child: Row(
+                    children: <Widget>[_authLine(songList[index]['ar'])],
+                  ),
                 )
               ],
             ),
@@ -52,5 +60,17 @@ class BottomList extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _authLine(list) {
+    var name = '';
+    for (var item in list) {
+      if (name == '') {
+        name = '$name' + '${item['name']}';
+      } else {
+        name = '$name' + '/' + '${item['name']}';
+      }
+    }
+    return Text(name);
   }
 }
