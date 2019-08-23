@@ -21,6 +21,8 @@ class BottomList extends StatelessWidget {
     //   title: Text('${songList[index]['name']}'),
     //   subtitle: Text('副标题'),
     // );
+    print('列表数据------');
+    print(songList[0]['mv']);
     return Container(
       margin: EdgeInsets.only(top: 10),
       height: ScreenUtil().setHeight(70),
@@ -79,11 +81,13 @@ class BottomList extends StatelessWidget {
               width: ScreenUtil().setWidth(100),
               height: ScreenUtil().setHeight(70),
               // color: Colors.green,
-              child: Icon(
-                IconData(0xe623, fontFamily: 'IconFont'),
-                size: 20,
-                color: Colors.black45,
-              ),
+              child: songList[index]['mv'] == 0
+                  ? Icon(
+                      IconData(0xe623, fontFamily: 'IconFont'),
+                      size: 20,
+                      color: Colors.black45,
+                    )
+                  : Text(''),
             ),
           ),
           InkWell(
