@@ -41,11 +41,6 @@ class BottomModel extends StatelessWidget {
       },
       child: Container(
         height: ScreenUtil().setHeight(98),
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(width: 1, color: Colors.black12),
-          ),
-        ),
         child: Row(
           children: <Widget>[
             Container(
@@ -58,7 +53,17 @@ class BottomModel extends StatelessWidget {
                 ),
               ),
             ),
-            Text('$title')
+            Container(
+              alignment: Alignment.centerLeft,
+              width: ScreenUtil().setWidth(680),
+              height: ScreenUtil().setHeight(98),
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(width: 1, color: Colors.black12),
+                ),
+              ),
+              child: Text('$title'),
+            )
           ],
         ),
       ),
