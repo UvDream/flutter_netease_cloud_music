@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-19 16:51:48
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 15:33:20
+ * @LastEditTime: 2019-08-26 10:54:58
  * @Description: 歌单作者以及简介
  * @Email: UvDream@163.com
  */
@@ -126,10 +126,13 @@ class AuthDescription extends StatelessWidget {
             ],
           ),
           Container(
+            width: ScreenUtil().setWidth(250),
             margin: EdgeInsets.only(left: 4),
             child: Text(
               message.nickName,
               style: TextStyle(color: Colors.white),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           Icon(Icons.chevron_right, color: Colors.white),
@@ -144,7 +147,7 @@ class AuthDescription extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Container(
-            width: ScreenUtil().setWidth(245),
+            width: ScreenUtil().setWidth(320),
             child: Text(
               message.description == null ? '暂无描述' : message.description,
               style: TextStyle(color: Colors.white),
