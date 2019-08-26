@@ -1,3 +1,11 @@
+/*
+ * @Author: wangzhongjie
+ * @Date: 2019-08-26 11:12:32
+ * @LastEditors: wangzhongjie
+ * @LastEditTime: 2019-08-26 11:18:09
+ * @Description: 跑马灯插件
+ * @Email: UvDream@163.com
+ */
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
