@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PlayButton extends StatelessWidget {
+  PlayButton({this.color = false});
+  final bool color;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +14,7 @@ class PlayButton extends StatelessWidget {
           child: Icon(
             IconData(0xe649, fontFamily: 'IconFont'),
             size: 25,
-            color: Colors.black,
+            color: color ? Colors.white : Colors.black,
           ),
         ),
       ),

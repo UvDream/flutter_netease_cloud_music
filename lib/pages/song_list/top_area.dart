@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-26 11:27:15
+ * @LastEditTime: 2019-08-26 11:51:08
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -15,6 +15,7 @@ import './share_area.dart';
 import '../../provider/song_list/song_detail.dart';
 import 'package:provider/provider.dart';
 import '../../material/marquee.text.dart';
+import '../../components/play.dart';
 
 class TopArea extends StatelessWidget {
   @override
@@ -68,6 +69,21 @@ class _PlaylistDetailHeader extends StatelessWidget {
             // 解决头部问题
             backgroundColor: Colors.transparent,
             elevation: 0,
+            actions: <Widget>[
+              InkWell(
+                onTap: () {},
+                child: Icon(
+                  IconData(
+                    0xe612,
+                    fontFamily: "IconFont",
+                  ),
+                  color: Colors.white,
+                ),
+              ),
+              PlayButton(
+                color: true,
+              )
+            ],
           ),
     );
   }
