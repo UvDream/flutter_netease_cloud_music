@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-26 11:15:05
+ * @LastEditTime: 2019-08-26 11:27:15
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -58,13 +58,13 @@ class _PlaylistDetailHeader extends StatelessWidget {
               ),
             ),
             centerTitle: true,
-            // title: Text(
-            //   t > 0.5 ? title : '歌单',
-            //   style: TextStyle(color: Colors.white),
-            // ),
-            title: MarqueeText.rich(TextSpan(
-                text: t > 0.5 ? title : '歌单',
-                style: TextStyle(color: Colors.white))),
+            title: t > 0.5
+                ? MarqueeText.rich(TextSpan(
+                    text: title, style: TextStyle(color: Colors.white)))
+                : Text(
+                    '歌单',
+                    style: TextStyle(color: Colors.white),
+                  ),
             // 解决头部问题
             backgroundColor: Colors.transparent,
             elevation: 0,
