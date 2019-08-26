@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-22 15:51:31
+ * @LastEditTime: 2019-08-26 11:15:05
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -14,6 +14,7 @@ import './song_auth.dart';
 import './share_area.dart';
 import '../../provider/song_list/song_detail.dart';
 import 'package:provider/provider.dart';
+import '../../material/marquee.text.dart';
 
 class TopArea extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class TopArea extends StatelessWidget {
       expandedHeight: ScreenUtil().setHeight(550),
       pinned: true,
       bottom: _buildListHeader(context, message.trackCount),
-      flexibleSpace: _PlaylistDetailHeader(message.songImg),
+      flexibleSpace: _PlaylistDetailHeader(message.songImg, message.title),
     );
   }
 
@@ -38,7 +39,8 @@ class TopArea extends StatelessWidget {
 
 class _PlaylistDetailHeader extends StatelessWidget {
   final String songImg;
-  _PlaylistDetailHeader(this.songImg);
+  final String title;
+  _PlaylistDetailHeader(this.songImg, this.title);
   @override
   Widget build(BuildContext context) {
     return FlexibleDetailBar(
@@ -56,10 +58,13 @@ class _PlaylistDetailHeader extends StatelessWidget {
               ),
             ),
             centerTitle: true,
-            title: Text(
-              '歌单',
-              style: TextStyle(color: Colors.white),
-            ),
+            // title: Text(
+            //   t > 0.5 ? title : '歌单',
+            //   style: TextStyle(color: Colors.white),
+            // ),
+            title: MarqueeText.rich(TextSpan(
+                text: t > 0.5 ? title : '歌单',
+                style: TextStyle(color: Colors.white))),
             // 解决头部问题
             backgroundColor: Colors.transparent,
             elevation: 0,
