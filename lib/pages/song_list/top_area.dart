@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-08-12 11:18:06
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-08-26 11:51:08
+ * @LastEditTime: 2019-08-26 14:30:38
  * @Description: 顶部区域
  * @Email: UvDream@163.com
  */
@@ -16,6 +16,7 @@ import '../../provider/song_list/song_detail.dart';
 import 'package:provider/provider.dart';
 import '../../material/marquee.text.dart';
 import '../../components/play.dart';
+import './bottom_model.dart';
 
 class TopArea extends StatelessWidget {
   @override
@@ -71,7 +72,24 @@ class _PlaylistDetailHeader extends StatelessWidget {
             elevation: 0,
             actions: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  showModalBottomSheet(
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: ScreenUtil().setHeight(392),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20),
+                            ),
+                          ),
+                          child: BottomModel(),
+                        );
+                      });
+                },
                 child: Icon(
                   IconData(
                     0xe612,
