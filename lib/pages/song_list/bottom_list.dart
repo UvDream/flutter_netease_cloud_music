@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../routers/application.dart';
 
 class BottomList extends StatelessWidget {
   final List songList;
@@ -24,7 +25,9 @@ class BottomList extends StatelessWidget {
     print('列表数据------');
     print(songList[0]['mv']);
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Application.router.navigateTo(context, '/player');
+      },
       child: Container(
         margin: EdgeInsets.only(top: 10),
         height: ScreenUtil().setHeight(70),
