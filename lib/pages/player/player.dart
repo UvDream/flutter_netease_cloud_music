@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-02 09:23:21
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 14:57:21
+ * @LastEditTime: 2019-09-03 15:09:41
  * @Description: 播放界面
  * @Email: UvDream@163.com
  */
@@ -10,7 +10,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './palyer_title.dart';
-import 'dart:ui' as ui;
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlayerPage extends StatelessWidget {
   @override
@@ -33,6 +33,7 @@ class PlayerPage extends StatelessWidget {
   }
 }
 
+// 播放器模糊背景
 class PlayerBackground extends StatelessWidget {
   final music;
   const PlayerBackground({Key key, this.music}) : super(key: key);
@@ -44,14 +45,21 @@ class PlayerBackground extends StatelessWidget {
         children: <Widget>[
           Opacity(
             opacity: 1,
-            child: Image.network(
-              music,
-              fit: BoxFit.contain,
+            child: Container(
+              height: ScreenUtil().setHeight(1334),
+              color: Colors.red,
+              child: Image.network(
+                music,
+                fit: BoxFit.fitHeight,
+              ),
             ),
           ),
           BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
-              child: Container(color: Colors.black.withOpacity(0.3)))
+            filter: ImageFilter.blur(sigmaX: 24, sigmaY: 100),
+            child: Container(
+              color: Colors.black.withOpacity(0.3),
+            ),
+          )
         ],
       ),
     );

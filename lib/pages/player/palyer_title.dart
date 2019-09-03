@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-03 14:12:00
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 15:00:40
+ * @LastEditTime: 2019-09-03 15:08:43
  * @Description: 播放界面AppBar
  * @Email: UvDream@163.com
  */
@@ -15,6 +15,7 @@ class PlayingTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      brightness: Brightness.dark,
       leading: InkWell(
         onTap: () {
           Navigator.pop(context);
