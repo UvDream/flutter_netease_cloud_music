@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-02 09:23:21
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 15:24:45
+ * @LastEditTime: 2019-09-03 16:34:36
  * @Description: 播放界面
  * @Email: UvDream@163.com
  */
@@ -11,6 +11,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import './palyer_title.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './player_content.dart';
+import './btn_group.dart';
+import './slider.dart';
+import './play_group.dart';
 
 class PlayerPage extends StatelessWidget {
   final String songId;
@@ -27,7 +31,13 @@ class PlayerPage extends StatelessWidget {
           Material(
             color: Colors.transparent,
             child: Column(
-              children: <Widget>[PlayingTitle()],
+              children: <Widget>[
+                PlayingTitle(),
+                PlayerContent(),
+                BtnGroup(),
+                SliderBar(),
+                PlayGroup(),
+              ],
             ),
           )
         ],
