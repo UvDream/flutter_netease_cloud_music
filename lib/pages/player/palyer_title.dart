@@ -2,11 +2,12 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-03 14:12:00
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 14:40:37
+ * @LastEditTime: 2019-09-03 15:00:40
  * @Description: 播放界面AppBar
  * @Email: UvDream@163.com
  */
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../../material/marquee.text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,14 +15,26 @@ class PlayingTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leading: InkWell(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Container(
+          child: Icon(IconData(0xe707, fontFamily: 'IconFont'),
+              color: Colors.white),
+        ),
+      ),
       backgroundColor: Colors.transparent,
+      elevation: 0,
+      titleSpacing: 0,
       title: InkWell(
         onTap: () {},
         child: Container(
           child: Column(
             children: <Widget>[
               MarqueeText.rich(
-                TextSpan(text: "很长的标题就是很长"),
+                TextSpan(
+                    text: "很长的标题就是很长", style: TextStyle(color: Colors.white)),
               ),
               Container(
                 alignment: Alignment.center,
@@ -34,13 +47,13 @@ class PlayingTitle extends StatelessWidget {
                         '周几轮',
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(25),
-                            color: Colors.black54),
+                            color: Colors.white),
                       ),
                     ),
                     Container(
                       child: Icon(
                         Icons.chevron_right,
-                        color: Colors.black54,
+                        color: Colors.white,
                       ),
                     )
                   ],
