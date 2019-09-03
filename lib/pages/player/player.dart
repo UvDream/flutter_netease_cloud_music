@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-02 09:23:21
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 15:09:41
+ * @LastEditTime: 2019-09-03 15:12:07
  * @Description: 播放界面
  * @Email: UvDream@163.com
  */
@@ -50,12 +50,12 @@ class PlayerBackground extends StatelessWidget {
               color: Colors.red,
               child: Image.network(
                 music,
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.fill,
               ),
             ),
           ),
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 24, sigmaY: 100),
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
             child: Container(
               color: Colors.black.withOpacity(0.3),
             ),
