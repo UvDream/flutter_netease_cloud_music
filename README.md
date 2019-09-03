@@ -42,3 +42,9 @@
 > ## 推荐歌单列表
 
 > <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/songList.JPG?raw=true" width="200px"  />
+
+安装包版本下载
+
+### android v0.1.0
+
+[v0.1.0 apk 文件下载](https://github.com/UvDream/flutter_netease_cloud_music/releases/download/v0.1.0/app-release.apk "v0.1.0")
