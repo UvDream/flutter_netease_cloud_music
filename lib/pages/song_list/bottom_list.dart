@@ -22,11 +22,12 @@ class BottomList extends StatelessWidget {
     //   title: Text('${songList[index]['name']}'),
     //   subtitle: Text('副标题'),
     // );
-    print('列表数据------');
-    print(songList[0]['mv']);
+    // print('列表数据------');
+    // print(songList[0]['mv']);
     return InkWell(
       onTap: () {
-        Application.router.navigateTo(context, '/player');
+        Application.router
+            .navigateTo(context, '/player?id=${songList[index]['id']}');
       },
       child: Container(
         margin: EdgeInsets.only(top: 10),

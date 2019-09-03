@@ -2,7 +2,7 @@
  * @Author: wangzhongjie
  * @Date: 2019-09-02 09:23:21
  * @LastEditors: wangzhongjie
- * @LastEditTime: 2019-09-03 15:12:07
+ * @LastEditTime: 2019-09-03 15:24:45
  * @Description: 播放界面
  * @Email: UvDream@163.com
  */
@@ -13,8 +13,11 @@ import './palyer_title.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PlayerPage extends StatelessWidget {
+  final String songId;
+  PlayerPage(this.songId);
   @override
   Widget build(BuildContext context) {
+    print("歌曲详情id=${this.songId}");
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -33,7 +36,7 @@ class PlayerPage extends StatelessWidget {
   }
 }
 
-// 播放器模糊背景
+// 播放器模糊背景利用高斯模糊
 class PlayerBackground extends StatelessWidget {
   final music;
   const PlayerBackground({Key key, this.music}) : super(key: key);

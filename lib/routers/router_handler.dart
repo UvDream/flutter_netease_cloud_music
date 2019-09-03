@@ -10,6 +10,8 @@ Handler songListHandler = Handler(
 });
 Handler playerHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  // String songId = params['id'].first;
-  return PlayerPage();
+  print("路由传参+++++++++");
+  print(params);
+  String songId = params['id'].first;
+  return PlayerPage(songId);
 });
