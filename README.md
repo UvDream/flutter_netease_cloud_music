@@ -41,7 +41,7 @@
 
 > ## 推荐歌单列表
 
-> <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/songList.JPG?raw=true" width="200px"  />
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/songList.JPG?raw=true" width="200px"  />
 
 安装包版本下载
 
@@ -51,3 +51,8 @@
 
 Flutter QQ 交流群(167646174)
 
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/qq.jpg?raw=true" width="200px"  />
+
+Flutter 微信交流群
+
+<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/wechat.png?raw=true" width="200px"  />
