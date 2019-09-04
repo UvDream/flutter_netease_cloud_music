@@ -48,3 +48,6 @@
 ### android v0.1.0
 
 [v0.1.0 apk 文件下载](https://github.com/UvDream/flutter_netease_cloud_music/releases/download/v0.1.0/app-release.apk "v0.1.0")
+
+Flutter QQ 交流群(167646174)
+
