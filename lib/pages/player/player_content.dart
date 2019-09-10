@@ -9,13 +9,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PlayerContent extends StatelessWidget {
+class PlayerContent extends StatefulWidget {
+  @override
+  _PlayerContentState createState() => _PlayerContentState();
+}
+
+class _PlayerContentState extends State<PlayerContent> {
+  static const double HEIGHT_SPACE_ALBUM_TOP = 100;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: ScreenUtil().setWidth(750),
       height: ScreenUtil().setHeight(850),
-      child: Text('歌词区域'),
+      child: Stack(
+        children: <Widget>[
+          ClipRect(
+            child: Container(
+              child: Align(
+                alignment: Alignment(0, -1),
+                child: Transform.translate(
+                  offset: Offset(10, -15),
+                  child: Container(
+                    width: 100,
+                    height: 200,
+                    color: Colors.red,
+                    child: Image.asset("images/play/play.png"),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
