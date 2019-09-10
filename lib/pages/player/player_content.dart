@@ -33,17 +33,23 @@ class _PlayerContentState extends State<PlayerContent> {
               child: Align(
                 alignment: Alignment(0, -1),
                 child: Transform.translate(
-                  offset: Offset(10, -15),
+                  offset: Offset(40, -15),
                   child: Container(
-                    width: 100,
-                    height: 200,
-                    color: Colors.red,
+                    width: ScreenUtil().setSp(200),
+                    height: ScreenUtil().setSp(368),
                     child: Image.asset("images/play/play.png"),
                   ),
                 ),
               ),
             ),
           ),
+          Positioned(
+            top: ScreenUtil().setHeight(100),
+            left: ScreenUtil().setWidth(100),
+            child: Container(
+              child: Text('data'),
+            ),
+          )
         ],
       ),
     );
