@@ -33,7 +33,7 @@
 
 |                      推荐歌单列表                      | 暂无 | 暂无 |
 | :----------------------------------------------------: | :--: | :--: |
-| <img src="./docs/images/songList.jpg" width="200px" /> | 暂无 | 暂无 |
+| <img src="./docs/images/songList.JPG" width="200px" /> | 暂无 | 暂无 |
 
 安装包版本下载
 
