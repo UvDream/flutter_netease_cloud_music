@@ -31,21 +31,9 @@
 | :------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
 | <img src="./docs/images/Find.PNG" width="200px" /> | <img src="./docs/images/my.PNG" width="200px" /> | <img src="./docs/images/count.PNG" width="200px" /> |
 
-> ## 发现页面
-
-<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/Find.PNG?raw=true" width="200px"  />
-
-> ## 我的界面
-
-<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/my.PNG?raw=true" width="200px"  />
-
-> ## 账号界面
-
-<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/count.PNG?raw=true" width="200px"  />
-
-> ## 推荐歌单列表
-
-<img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/songList.JPG?raw=true" width="200px"  />
+|                      推荐歌单列表                      | 暂无 | 暂无 |
+| :----------------------------------------------------: | :--: | :--: |
+| <img src="./docs/images/songList.jpg" width="200px" /> | 暂无 | 暂无 |
 
 安装包版本下载
 
@@ -58,4 +46,5 @@ Flutter QQ 交流群(167646174)
 <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/qq.jpg?raw=true" width="200px"  />
 
 Flutter 微信交流群
+
 <img src="https://github.com/UvDream/flutter_netease_cloud_music/blob/master/docs/images/wechat.png?raw=true" width="200px"  />
